@@ -9,15 +9,15 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package real-e-state
+ * @package faithtree
  */
 
 get_header(); ?>
 <main id="main" class="container-fluid">
-	<div class="row">
+	<section id="section-1" class="row">
 
 
-	</div><!-- .row -->
+	</section><!-- .row -->
 </main><!-- #main -->
 <?php
 get_footer();

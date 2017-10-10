@@ -4,7 +4,7 @@
  * 
  */
 
-if ( ! function_exists( 'wonkasoft_starter_setup' ) ) :
+if ( ! function_exists( 'faithtree_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -12,14 +12,14 @@ if ( ! function_exists( 'wonkasoft_starter_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function wonkasoft_starter_setup() {
+function faithtree_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Real e-state, use a find and replace
 	 * to change 'real-e-state' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'wonkasoft-starter', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'faithtree', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -39,35 +39,35 @@ function wonkasoft_starter_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in five locations.
+	// This theme uses wp_nav_menu() in six locations.
 	// This is the Primary Main Title Menu and used in the header.php file
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'wonkasoft-starter' ),
+		'menu-1' => esc_html__( 'Primary', 'faithtree' ),
 	) );
 
 	// This is the Sub Menu and used in the header.php file
 	register_nav_menus( array(
-		'menu-2' => esc_html__( 'SubMenu', 'wonkasoft-starter' ),
+		'menu-2' => esc_html__( 'SubMenu', 'faithtree' ),
 	) );
 
 	// This menu is on the footer for the explore menu and used in the footer.php file
 	register_nav_menus( array(
-		'menu-3' => esc_html__( 'Explore', 'wonkasoft-starter' ),
+		'menu-3' => esc_html__( 'Explore', 'faithtree' ),
 	) );
 
 	// This menu is on the footer for the about menu and used in the footer.php file
 	register_nav_menus( array(
-		'menu-4' => esc_html__( 'About', 'wonkasoft-starter' ),
+		'menu-4' => esc_html__( 'About', 'faithtree' ),
 	) );
 
 	// This menu is on the footer for the contact menu and used in the footer.php file
 	register_nav_menus( array(
-		'menu-5' => esc_html__( 'Contact', 'wonkasoft-starter' ),
+		'menu-5' => esc_html__( 'Contact', 'faithtree' ),
 	) );
 
 	// This menu is on the footer for the connect menu and used in the footer.php file
 	register_nav_menus( array(
-		'menu-6' => esc_html__( 'Connect', 'wonkasoft-starter' ),
+		'menu-6' => esc_html__( 'Connect', 'faithtree' ),
 	) );
 
 	/*
@@ -83,7 +83,7 @@ function wonkasoft_starter_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'real_e_state_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'faithtree_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -104,12 +104,12 @@ function wonkasoft_starter_setup() {
 	) );
 }
 endif;
-add_action( 'after_setup_theme', 'wonkasoft_starter_setup' );
+add_action( 'after_setup_theme', 'faithtree_setup' );
 
 /**
  * Enqueue scripts and styles.
  */
-function wonkasoft_starter_scripts() {
+function faithtree_scripts() {
 
 	// Check to see if bootstrap style is already enqueue before setting the enqueue
 	$style = 'bootstrap';
@@ -118,7 +118,7 @@ function wonkasoft_starter_scripts() {
 		wp_enqueue_style( $style, get_template_directory_uri() . '/assets/css/bootstrap.min.css', '3.3.7', 'all' );
 	}
 
-	wp_enqueue_style( 'wonkasoft-starter-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'faithtree-style', get_stylesheet_uri() );
 
 	// Check to see if bootstrap js is already enqueue before setting the enqueue
 	$bootstrapjs = 'bootstrap-js';
@@ -128,4 +128,4 @@ function wonkasoft_starter_scripts() {
 	} 
 }
 
-add_action( 'wp_enqueue_scripts', 'wonkasoft_starter_scripts' );
+add_action( 'wp_enqueue_scripts', 'faithtree_scripts' );
