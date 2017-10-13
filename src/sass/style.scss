@@ -9,7 +9,11 @@
  * @Media ( min-width: $xlarge )
  */
 /* End Media Queries */
-@import '_above-fold.scss';
+@import 'above-fold.scss';
+
+#marriage-family {
+	background: #000000;
+}
 
 /* FOOTER AREA */
 #e-state-footer {

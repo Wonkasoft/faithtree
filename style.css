@@ -19,4 +19,4 @@
  */
 
 /*Import all of the minified css into the main style sheet*/
-@import 'assets/css/style.min.css';
+@import url('assets/css/style.min.css');

@@ -35,12 +35,33 @@ body {
 }
 
 #masthead {
-	position: relative;
+	position: absolute;
 	display: block;
 	height: 125px;
-	background: $header-color;
-	background: -webkit-linear-gradient(-245deg, $header-color 0%, $header-color 100%);
-	background: linear-gradient(-245deg, $header-color 0%, $header-color 100%);
+}
+
+.primary-cols {
+	position: fixed;
+	bottom: 25px;
+	z-index: 1000;
+}
+
+#primary-1 {
+	list-style-type: none;
+	font-size: 16px;
+	font-family: $avenir;
+	font-weight: 600;
+	li {
+		text-align: left;
+		padding: 15px 0 15px 10px;
+		margin: 0 -1px;
+		width: 23.3%;
+		display: inline-block;
+		background: #ffffff;
+		a {
+			color: #404043;
+		}
+	}
 }
 
 #main {
@@ -49,9 +70,20 @@ body {
 	padding-bottom: 300px;
 }
 
+#above-fold {
+	position: relative;
+	top: 0;
+	bottom: 0;
+	background: #000;
+	width: 0;
+	height: 0;
+	transition: all .3s ease-in-out;
+}
+
 #e-state-footer {
-	position: absolute;
+	position: relative;
 	display: block;
+	clear: both;
 	width: 100%;
 	bottom: 0;
 	height: 300px;

@@ -14,7 +14,19 @@
 
 get_header(); ?>
 <main id="main" class="container-fluid">
-	<section id="section-1" class="row">
+	<section id="above-fold" class="row">
+
+
+	</section><!-- .row -->
+	<section id="christian-living" class="row">
+
+
+	</section><!-- .row -->
+	<section id="marriage-family" class="row">
+
+
+	</section><!-- .row -->
+	<section id="disability-gospel" class="row">
 
 
 	</section><!-- .row -->

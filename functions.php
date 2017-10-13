@@ -42,12 +42,12 @@ function faithtree_setup() {
 	// This theme uses wp_nav_menu() in six locations.
 	// This is the Primary Main Title Menu and used in the header.php file
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'faithtree' ),
+		'primary' => esc_html__( 'Primary', 'faithtree' ),
 	) );
 
 	// This is the Sub Menu and used in the header.php file
 	register_nav_menus( array(
-		'menu-2' => esc_html__( 'SubMenu', 'faithtree' ),
+		'subMenu' => esc_html__( 'Sub-Menu', 'faithtree' ),
 	) );
 
 	// This menu is on the footer for the explore menu and used in the footer.php file
@@ -126,6 +126,18 @@ function faithtree_scripts() {
 	 	// enqueue bootstrap js
 		wp_enqueue_script( $bootstrapjs, get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ), '3.3.7', true );
 	} 
+	$themeName = str_replace(' theme', '', strtolower(wp_get_theme()));
+	// Check is this theme has a js file and enqueue it
+	if ( get_template_directory_uri() . '/assets/js/'. $themeName .'.min.js' ) {
+	 	// enqueue bootstrap js
+		wp_enqueue_script( $themeName . '-js', get_template_directory_uri() . '/assets/js/'. $themeName .'.min.js', array(), '1.0.0', true );
+	} 
+
 }
 
 add_action( 'wp_enqueue_scripts', 'faithtree_scripts' );
+
+/**
+ * Customizer additions.
+ */
+require get_parent_theme_file_path( '/inc/customizer.php' );
