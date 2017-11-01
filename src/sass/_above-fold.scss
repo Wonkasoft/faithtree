@@ -12,7 +12,7 @@
 /* End Media Queries */
 
 /* THEME FONTS */
-$avenir: Avenir;
+$avenir: 'Avenir';
 @font-face {
     font-family:  'Avenir';
     src: url('../fonts/Avenir.ttc');
@@ -23,14 +23,18 @@ $header-color: #3C6595;
 $header-dark: #143B6A;
 $footer-color: #8cc07d;
 
+/* THEME AREA HEIGHTS */
+$footer-height: 400px;
+
 /* page setup */
 html, body {
-	width: 100%;
-	height: 100%;
-	position: relative;
+	padding: 0;
+	margin: 0;
 }
 
 body {
+	height: 100%;
+	position: relative;
 	font-family: $avenir;
 }
 
@@ -67,26 +71,24 @@ body {
 #main {
 	position: relative;
 	display: block;
-	padding-bottom: 300px;
+	padding-bottom: $footer-height;
+}
+section:nth-child(odd) {
+	background: #000000;
 }
 
 #above-fold {
 	position: relative;
-	top: 0;
-	bottom: 0;
-	background: #000;
-	width: 0;
-	height: 0;
 	transition: all .3s ease-in-out;
 }
 
-#e-state-footer {
+#page-footer {
 	position: relative;
 	display: block;
 	clear: both;
 	width: 100%;
 	bottom: 0;
-	height: 300px;
+	height: $footer-height;
 }
 /* end page setup */
 

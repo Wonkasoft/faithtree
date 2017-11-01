@@ -1,4 +1,3 @@
-"use strict";
 
 var gulp = require('gulp'),
 sass = require('gulp-sass'),
@@ -13,7 +12,7 @@ browserSync = require('browser-sync').create(),
 fs = require('node-fs'),
 fse = require('fs-extra'),
 json = require('json-file'),
-uglify = require('gulp-uglify'),
+jsmin = require('gulp-js-minify'),
 themeName = json.read('./package.json').get('name'),
 siteName = json.read('./package.json').get('siteName'),
 themeDir = '../' + themeName,
@@ -85,7 +84,7 @@ gulp.task('js', function () {
  
 		.pipe(jshint.reporter('fail'))
 
-		.pipe(uglify())
+		.pipe(jsmin())
 		 
 		.pipe(concat(themeName + '.min.js'))
 		 

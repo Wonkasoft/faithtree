@@ -11,12 +11,12 @@
 /* End Media Queries */
 @import 'above-fold.scss';
 
-#marriage-family {
-	background: #000000;
+section:nth-child(even) {
+	
 }
 
 /* FOOTER AREA */
-#e-state-footer {
+#page-footer {
 	background: $footer-color;
 	background: -webkit-linear-gradient(-245deg, rgba(164, 255, 137, 0.8) 0%, $footer-color 100%);
 	background: linear-gradient(-245deg, rgba(164, 255, 137, 0.8) 0%, $footer-color 100%);
@@ -24,7 +24,7 @@
 		padding: 15px;
 		height: 55px;
 		&:first-child {
-			height: 245px;
+			height: 260px;
 		}
 	}
 }
