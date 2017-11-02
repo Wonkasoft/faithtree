@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900');
 /**
  *  This is for all css that will affect the elements that are above the fold.
  */
@@ -12,16 +13,20 @@
 /* End Media Queries */
 
 /* THEME FONTS */
-$avenir: 'Avenir';
+$saira: 'Saira Extra Condensed', sans-serif;
+$oswald: 'Oswald', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$avenir: 'Avenir', sans-serif;
 @font-face {
-    font-family:  'Avenir';
+    font-family:  'Avenir', sans-serif;
     src: url('../fonts/Avenir.ttc');
 }
 
 /* THEME COLORS */
 $header-color: #3C6595;
 $header-dark: #143B6A;
-$footer-color: #8cc07d;
+$footer-color: #424244;
+$btn-color: #424244;
 
 /* THEME AREA HEIGHTS */
 $footer-height: 400px;
@@ -39,31 +44,112 @@ body {
 }
 
 #masthead {
-	position: absolute;
+	position: relative;
 	display: block;
 	height: 125px;
+	width: 100%;
+	margin: 25px 0 -150px;
+	z-index: 100;
 }
 
-.primary-cols {
+.top-menu {
+	display: inline;
+	vertical-align: bottom;
+	padding-right: 16px;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+}
+
+.top-menu > img, .top-menu > span {
+    display: inline-block;
+    vertical-align: -webkit-baseline-middle;
+    height: 23px;
+    color: #fff;
+}
+
+.primary-menu-container {
+  position: relative;
+  padding-top: calc(100vw / 8);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1045;
+	#primary-1 {
+		list-style-type: none;
+		padding: 0;
+		li {
+			a {
+				color: #fff;
+				font-size: 44px;
+			}
+		}
+	}
+}
+
+.modal-backdrop {
+	background-color: rgba( #1da39c, 0.9);
+	z-index: 75;
+	&.in {
+		opacity: 1;
+	}
+}
+
+.sub-menu-cols {
 	position: fixed;
 	bottom: 25px;
-	z-index: 1000;
+	z-index: 70;
 }
 
-#primary-1 {
+#sub-menu-1 {
 	list-style-type: none;
-	font-size: 16px;
+	font-size: 1vw;
 	font-family: $avenir;
 	font-weight: 600;
 	li {
+		position: relative;
 		text-align: left;
 		padding: 15px 0 15px 10px;
 		margin: 0 -1px;
 		width: 23.3%;
 		display: inline-block;
 		background: #ffffff;
+		transition: all 0.2s ease-in-out;
 		a {
 			color: #404043;
+			transition: all 0.2s ease-in-out;
+		}
+		ul.sub-menu {
+			position: absolute;
+			padding: 0;
+			width: 100%;
+			left: 1px;
+			bottom: 3.7vw;
+			transition: all 0.2s ease-in-out;
+			li {
+				width: 100%;
+				padding: 0;
+				height: 0;
+				opacity: 0;
+				transition: all 0.2s ease-in-out;
+				a {
+					white-space: nowrap;
+				}
+			}
+		}
+		&:hover {
+			background: $btn-color;
+			> a {
+				color: #fff;
+				text-decoration: none;
+			}
+			ul.sub-menu {
+				> li {
+					height: 3.5vw;
+					padding: 15px 0 15px 10px;
+					opacity: 1;
+				}
+			}
 		}
 	}
 }
@@ -73,17 +159,62 @@ body {
 	display: block;
 	padding-bottom: $footer-height;
 }
-section:nth-child(odd) {
-	background: #000000;
+section {
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	color: #fff;
 }
 
 #above-fold {
+	font-size: 3.5vw;
 	position: relative;
 	transition: all .3s ease-in-out;
+	.col-xs-12.video-wrap {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+		video {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -2;
+		}
+	}
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		background: rgba( #000, 0.3 );
+		z-index: -1;
+	}
+	.title {
+		margin-top: calc(100vw / 10);
+	}
+	.tag-line {
+		font-weight: bold;
+	}
+	.cta {
+		text-decoration: underline;
+		font-size: 2vw;
+		a {
+			color: #fff;
+		}
+	}
+}
+
+#under-header {
+	background: #d8d8d8;
+	height: 350px;
 }
 
 #page-footer {
-	position: relative;
+	position: absolute;
 	display: block;
 	clear: both;
 	width: 100%;

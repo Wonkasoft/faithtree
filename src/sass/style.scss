@@ -11,20 +11,148 @@
 /* End Media Queries */
 @import 'above-fold.scss';
 
-section:nth-child(even) {
-	
+
+/* SECTIONS */
+section:not(:first-child) {
+	line-height: 1;
+	padding: 25px 0;
+	.title {
+		font-family: $roboto;
+		font-weight: 300;
+		padding-top: 25px;
+		font-size: 37px;
+	}
+
+	.tag-line {
+		font-size: 4.2vw;
+		font-weight: 900;
+		font-stretch: expanded;
+		font-family: $saira;
+	}
+
+	.cta {
+			font-family: $roboto;
+			text-decoration: underline;
+			font-size: 1.5vw;
+			padding-top:15px;
+	}
+}
+/* END SECTIONS */
+
+/* SECTION CHRISTIAN LIVING */
+#christian-living {
+	.title {
+		.divider {
+			display: inline-block;
+	    top: 0;
+	    position: relative;
+		}
+		.text-italics {
+			font-style: italic;
+		}
+	}
+	.tag-line {
+		text-weight: bold;
+		letter-spacing: 15px;
+		.highlight {
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			padding: 8px;
+			background: #ffde16;
+			display: inline-block;
+		}
+	}
+	a {
+		color: #fff;
+	}
+}
+/* END SECTION CHRISTIAN LIVING */
+
+/* SECTION MARRIAGE & FAMILY */
+#marriage-family {
+	color: #000;
+	font-weight: 800;
+	.title {
+		font-style: italic;
+	}
+	#aof {
+		font-size: 38px;
+		font-weight: 800;
+    position: relative;
+    color: #000;
+    line-height: 1;
+    top: 15px;
+    height: 57px;
+    width: 57px;
+    display: inline-block;
+    vertical-align: text-top;
+    border-top: 10px solid #b84945;
+    border-bottom: 10px solid #b84945;
+	}
+	.red-text {
+		color: #b84945;
+		font-weight: 800;
+	}
+	a {
+		color: #000;
+	}
+}
+/* END SECTION MARRIAGE & FAMILY */
+
+/*DISABILITY & GOSPEL SECTION */
+#disability-gospel {
+	.title {
+		font-family: roboto;
+    font-style: italic;
+    font-weight: 300;
+	}
+	a {
+		color: #fff;
+	}
+}
+/* END DISABILITY & GOSPEL SECTION */
+
+#content-section {
+	color: #000;
+	font-size: 18px;
 }
 
 /* FOOTER AREA */
 #page-footer {
 	background: $footer-color;
-	background: -webkit-linear-gradient(-245deg, rgba(164, 255, 137, 0.8) 0%, $footer-color 100%);
-	background: linear-gradient(-245deg, rgba(164, 255, 137, 0.8) 0%, $footer-color 100%);
+	color: #fff;
+	font-size: 1vw;
 	> .row {
 		padding: 15px;
 		height: 55px;
 		&:first-child {
 			height: 260px;
+			div {
+				&:first-child {
+					padding-top: calc(100vw / 50);
+				}
+			}
+			.footer-email {
+				display: block;
+				float: right;
+				padding-top: calc(100vw / 50);
+				a {
+					color: #fff;
+					transition: all 0.2s ease-in-out;
+				}
+			}
+			.social-links {
+				display: inline-block;
+				font-size: 2vw;
+				padding-left: 10px;
+				float: right;
+				a {
+					color: #fff;
+				}
+				&:first-of-type {
+					clear: right;
+				}
+			}
 		}
 	}
 }

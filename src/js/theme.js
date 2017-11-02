@@ -12,14 +12,14 @@ current = '',
 next = '',
 canCall = true;
 
-for (var i = 0; i < sections.length; i++) {
-	sections[i].style.height = wh + 'px';
-	section_id.push( sections[i].id );
-	section_offsets.push( sections[i].offsetTop );
-}
+window.onload = setHeights;
+
+window.onresize = setHeights;
+
+
 page_footer = document.getElementById('page-footer').offsetTop;
 
-document.onwheel = scroll_setup;
+/*document.onwheel = scroll_setup;
 
 function scroll_setup() {
 	if (!canCall) {
@@ -32,9 +32,9 @@ function scroll_setup() {
 		var currentY = window.pageYOffset;
 			console.log(currentY +' new currentY');
 			console.log(section_offsets +' array');
-		current_index = getClosestSection( currentY, section_offsets );
-		current = section_id[current_index];
-		console.log( 'Index ' + current_index + ' ' + current + ' current section' );
+		current_offset = getClosestSection( currentY, section_offsets );
+		current = section_id[current_offset];
+		console.log( 'Index ' + current_offset + ' ' + current + ' current section' );
 		check = document.getElementById( current ).offsetTop;
 			console.log(check +' check offset');	
 		currentY = window.pageYOffset;
@@ -124,4 +124,16 @@ function getClosestSection( num, array ) {
 	}
 	//no length
 	return false;
-};
+};*/
+
+function setHeights() {
+	for (var i = 0; i < sections.length; i++) {
+		if ( sections[i].id == 'under-header' || sections[i].id == 'content-section' ) {
+
+		} else {
+			sections[i].style.height = wh + 'px';
+			section_id.push( sections[i].id );
+			section_offsets.push( sections[i].offsetTop );
+		}
+	}
+}

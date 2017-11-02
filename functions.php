@@ -16,8 +16,8 @@ function faithtree_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Real e-state, use a find and replace
-	 * to change 'real-e-state' to the name of your theme in all the template files.
+	 * If you're building a theme based on faithtree, use a find and replace
+	 * to change 'faithtree' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'faithtree', get_template_directory() . '/languages' );
 
@@ -39,35 +39,15 @@ function faithtree_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in six locations.
-	// This is the Primary Main Title Menu and used in the header.php file
+	// This theme uses wp_nav_menu() in 5 locations.
+	// This is the Primary Main Title Menu and used on the home page
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'faithtree' ),
 	) );
 
-	// This is the Sub Menu and used in the header.php file
+	// This is the Sub Menu and used on the home page
 	register_nav_menus( array(
-		'subMenu' => esc_html__( 'Sub-Menu', 'faithtree' ),
-	) );
-
-	// This menu is on the footer for the explore menu and used in the footer.php file
-	register_nav_menus( array(
-		'menu-3' => esc_html__( 'Explore', 'faithtree' ),
-	) );
-
-	// This menu is on the footer for the about menu and used in the footer.php file
-	register_nav_menus( array(
-		'menu-4' => esc_html__( 'About', 'faithtree' ),
-	) );
-
-	// This menu is on the footer for the contact menu and used in the footer.php file
-	register_nav_menus( array(
-		'menu-5' => esc_html__( 'Contact', 'faithtree' ),
-	) );
-
-	// This menu is on the footer for the connect menu and used in the footer.php file
-	register_nav_menus( array(
-		'menu-6' => esc_html__( 'Connect', 'faithtree' ),
+		'sub-menu' => esc_html__( 'Sub-Menu', 'faithtree' ),
 	) );
 
 	/*
@@ -81,12 +61,6 @@ function faithtree_setup() {
 		'gallery',
 		'caption',
 	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'faithtree_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -115,7 +89,7 @@ function faithtree_scripts() {
 	$style = 'bootstrap';
 	if ( ! wp_style_is( $style, 'enqueued' ) && ! wp_style_is( $style, 'done' ) ) {
     //queue up your bootstrap
-		wp_enqueue_style( $style, get_template_directory_uri() . '/assets/css/bootstrap.min.css', '3.3.7', 'all' );
+		wp_enqueue_style( $style, str_replace( array( 'http:', 'https:' ), 'https:', get_template_directory_uri() . '/assets/css/bootstrap.min.css'), '3.3.7', 'all' );
 	}
 
 	wp_enqueue_style( 'faithtree-style', get_stylesheet_uri() );
@@ -124,13 +98,13 @@ function faithtree_scripts() {
 	$bootstrapjs = 'bootstrap-js';
 	if ( ! wp_script_is( $bootstrapjs, 'enqueued')  &&  ! wp_script_is($bootstrapjs, 'done') ) {
 	 	// enqueue bootstrap js
-		wp_enqueue_script( $bootstrapjs, get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ), '3.3.7', true );
+		wp_enqueue_script( $bootstrapjs, str_replace( array( 'http:', 'https:' ), 'https:', get_template_directory_uri() . '/assets/js/bootstrap.min.js'), array( 'jquery' ), '3.3.7', true );
 	} 
 	$themeName = str_replace(' theme', '', strtolower(wp_get_theme()));
 	// Check is this theme has a js file and enqueue it
 	if ( get_template_directory_uri() . '/assets/js/'. $themeName .'.min.js' ) {
 	 	// enqueue bootstrap js
-		wp_enqueue_script( $themeName . '-js', get_template_directory_uri() . '/assets/js/'. $themeName .'.min.js', array(), '1.0.0', true );
+		wp_enqueue_script( $themeName . '-js', str_replace( array( 'http:', 'https:' ), 'https:', get_template_directory_uri() . '/assets/js/'. $themeName .'.min.js'), array(), '1.0.0', true );
 	} 
 
 }
