@@ -15,41 +15,41 @@
 $custom-transition: all .15s ease-in-out;
 
 /* THEME FONTS */
-$avenir-book: 'Avenir Book', sans-serif;
 @font-face {
     font-family:  'Avenir Book', sans-serif;
     src: url('../fonts/Avenir-Book.ttf');
 }
-$avenir-light: 'Avenir Light', sans-serif;
 @font-face {
     font-family:  'Avenir Light', sans-serif;
     src: url('../fonts/Avenir-Light.ttf');
 }
-$avenir-medium: 'Avenir Medium', sans-serif;
 @font-face {
     font-family:  'Avenir Medium', sans-serif;
     src: url('../fonts/Avenir-Medium.ttf');
 }
-$avenir-heavy: 'Avenir Heavy', sans-serif;
 @font-face {
     font-family:  'Avenir Heavy', sans-serif;
     src: url('../fonts/Avenir-Heavy.ttf');
 }
-$avenir-black: 'Avenir Black', sans-serif;
 @font-face {
     font-family:  'Avenir Black', sans-serif;
     src: url('../fonts/Avenir-Black.ttf');
 }
-$avenir-roman: 'Avenir Roman', sans-serif;
 @font-face {
     font-family:  'Avenir Roman', sans-serif;
     src: url('../fonts/Avenir-Roman.ttf');
 }
-$avenir-oblique: 'Avenir Oblique', sans-serif;
 @font-face {
     font-family:  'Avenir Oblique', sans-serif;
     src: url('../fonts/Avenir-Oblique.ttf');
 }
+$avenir-book: 'Avenir Book', sans-serif;
+$avenir-light: 'Avenir Light', sans-serif;
+$avenir-medium: 'Avenir Medium', sans-serif;
+$avenir-heavy: 'Avenir Heavy', sans-serif;
+$avenir-black: 'Avenir Black', sans-serif;
+$avenir-roman: 'Avenir Roman', sans-serif;
+$avenir-oblique: 'Avenir Oblique', sans-serif;
 
 /* THEME COLORS */
 $header-color: #3C6595;
