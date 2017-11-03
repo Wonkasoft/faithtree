@@ -1,6 +1,8 @@
 var wh = window.innerHeight,
+ww = window.innerWidth,
 main = document.getElementById('main'),
 sections = main.getElementsByTagName('section'),
+bottom_menu = document.getElementById('sub-menu-1').children,
 section_id = [],
 section_offsets = [],
 current_section = '',
@@ -12,9 +14,15 @@ current = '',
 next = '',
 canCall = true;
 
-window.onload = setHeights;
+window.onload = function () {
+	set_section_heights();
+	set_bottom_menu();
+};
 
-window.onresize = setHeights;
+window.onresize = function () {
+	set_section_heights();
+	set_bottom_menu();
+};
 
 
 page_footer = document.getElementById('page-footer').offsetTop;
@@ -126,7 +134,8 @@ function getClosestSection( num, array ) {
 	return false;
 };*/
 
-function setHeights() {
+function set_section_heights() {
+	wh = window.innerHeight;
 	for (var i = 0; i < sections.length; i++) {
 		if ( sections[i].id == 'under-header' || sections[i].id == 'content-section' ) {
 
@@ -135,5 +144,13 @@ function setHeights() {
 			section_id.push( sections[i].id );
 			section_offsets.push( sections[i].offsetTop );
 		}
+	}
+}
+
+function set_bottom_menu() {
+	ww = window.innerWidth;
+	var li_width = ww / bottom_menu.length / ww * 100 - 0.5;
+	for (var i = 0; i < bottom_menu.length; i++) {
+		bottom_menu[i].style.width = li_width + '%';
 	}
 }

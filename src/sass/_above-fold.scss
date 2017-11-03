@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900');
 /**
  *  This is for all css that will affect the elements that are above the fold.
  */
@@ -12,14 +11,44 @@
  */
 /* End Media Queries */
 
+/* TRANSITIONS */
+$custom-transition: all .15s ease-in-out;
+
 /* THEME FONTS */
-$saira: 'Saira Extra Condensed', sans-serif;
-$oswald: 'Oswald', sans-serif;
-$roboto: 'Roboto', sans-serif;
-$avenir: 'Avenir', sans-serif;
+$avenir-book: 'Avenir Book', sans-serif;
 @font-face {
-    font-family:  'Avenir', sans-serif;
-    src: url('../fonts/Avenir.ttc');
+    font-family:  'Avenir Book', sans-serif;
+    src: url('../fonts/Avenir-Book.ttf');
+}
+$avenir-light: 'Avenir Light', sans-serif;
+@font-face {
+    font-family:  'Avenir Light', sans-serif;
+    src: url('../fonts/Avenir-Light.ttf');
+}
+$avenir-medium: 'Avenir Medium', sans-serif;
+@font-face {
+    font-family:  'Avenir Medium', sans-serif;
+    src: url('../fonts/Avenir-Medium.ttf');
+}
+$avenir-heavy: 'Avenir Heavy', sans-serif;
+@font-face {
+    font-family:  'Avenir Heavy', sans-serif;
+    src: url('../fonts/Avenir-Heavy.ttf');
+}
+$avenir-black: 'Avenir Black', sans-serif;
+@font-face {
+    font-family:  'Avenir Black', sans-serif;
+    src: url('../fonts/Avenir-Black.ttf');
+}
+$avenir-roman: 'Avenir Roman', sans-serif;
+@font-face {
+    font-family:  'Avenir Roman', sans-serif;
+    src: url('../fonts/Avenir-Roman.ttf');
+}
+$avenir-oblique: 'Avenir Oblique', sans-serif;
+@font-face {
+    font-family:  'Avenir Oblique', sans-serif;
+    src: url('../fonts/Avenir-Oblique.ttf');
 }
 
 /* THEME COLORS */
@@ -35,119 +64,327 @@ $footer-height: 400px;
 html, body {
 	padding: 0;
 	margin: 0;
+	height: 100%;
 }
 
 body {
-	height: 100%;
+	font-family: $avenir-book;
+	-webkit-font-smoothing: antialiased;
+}
+
+a:hover, a:focus, a:active {
+	text-decoration: none;
+}
+
+div#page-wrap {
 	position: relative;
-	font-family: $avenir;
+	min-height: 100%;
 }
 
 #masthead {
-	position: relative;
+	position: fixed;
 	display: block;
-	height: 125px;
+	height: 80px;
 	width: 100%;
-	margin: 25px 0 -150px;
+	margin: 4vw 0;
 	z-index: 100;
+	transition: $custom-transition;
+	@media screen and ( min-width: 768px ) {
+		margin: 1vw 0;
+	}
+	.custom-logo {
+		width: 10vw;
+		transition: $custom-transition;
+		@media screen and ( min-width: 420px ) {
+			font-size: 8vw;
+		}
+		@media screen and ( min-width: 768px ) {
+			width: 5vw;
+		}
+		@media screen and ( min-width: 992px ) {
+			width: 3vw;
+		}
+	}
+
 }
 
 .top-menu {
-	display: inline;
+	width: 40px;
+	height: 20px;
+	overflow: hidden;
+	display: inline-block;
 	vertical-align: bottom;
-	padding-right: 16px;
-	font-weight: bold;
+	margin-right: 0px;
 	color: #fff;
 	cursor: pointer;
+	transition: $custom-transition;
+	@media screen and ( min-width: 420px ) {
+		height: 25px;
+		margin-right: 8px;
+	}
+	@media screen and ( min-width: 768px ) {
+		height: 30px;
+		margin-right: 15px;
+		&:hover {
+			width: 190px;
+			&:first-child {
+				width: 110px;
+			}
+			&:nth-child(3) {
+				width: 130px;
+			}
+		}
+	}
+	@media screen and ( min-width: 992px ) {
+		height: 30px;
+		margin-right: 15px;
+		&:hover {
+			width: 200px;
+			&:first-child {
+				width: 120px;
+			}
+			&:nth-child(3) {
+				width: 140px;
+			}
+		}
+	}
+	@media screen and ( min-width: 1200px ) {
+		height: 30px;
+		margin-right: 15px;
+		&:hover {
+			width: 240px;
+			&:first-child {
+				width: 150px;
+			}
+			&:nth-child(3) {
+				width: 160px;
+			}
+		}
+	}
+	> div > img, > div > span {
+		display: inline-block;
+		vertical-align: -webkit-baseline-middle;
+		height: 20px;
+		float: left;
+		color: #fff;
+		transition: $custom-transition;
+		@media screen and ( min-width: 420px ) {
+			height: 25px;
+		}
+		@media screen and ( min-width: 768px ) {
+			height: 30px;
+		}
+	}
+	> div > span {
+		padding: 0.2vw 0 0 15px;
+		font-size: 3vw;
+		line-height: 1;
+		@media screen and ( min-width: 420px ) {
+			padding: 0.7vw 0 0 15px;
+			height: 25px;
+			font-size: 8vw;
+		}
+		@media screen and ( min-width: 768px ) {
+			padding: 0.4vw 0 0 15px;
+			height: 30px;
+			font-size: 2.2vw;
+		}
+		@media screen and ( min-width: 992px ) {
+			height: 30px;
+			font-size: 2vw;
+		}
+		@media screen and ( min-width: 1200px ) {
+			padding: 0.3vw 0 0 15px;
+			height: 30px;
+		}
+		@media screen and ( min-width: 1366px ) {
+			padding: 0.2vw 0 0 15px;
+			height: 30px;
+			font-size: 1.5vw;
+		}
+	}
 }
 
-.top-menu > img, .top-menu > span {
-    display: inline-block;
-    vertical-align: -webkit-baseline-middle;
-    height: 23px;
-    color: #fff;
-}
-
+/* MAIN MENU */
 .primary-menu-container {
-  position: relative;
-  padding-top: calc(100vw / 8);
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 1045;
+	position: relative;
+	padding-top: 4.5vw;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 1045;
+	transition: $custom-transition;
+	@media screen and ( min-width: 768px ) {
+		padding-top: 1vw;
+	}
 	#primary-1 {
 		list-style-type: none;
 		padding: 0;
 		li {
 			a {
 				color: #fff;
-				font-size: 44px;
+				font-size: 8vw;
+				font-family: $avenir-black;
+				padding-left: 9vw;
+				transition: $custom-transition;
+				@media screen and ( min-width: 768px ) {
+					font-size: 4vw;
+					line-height: 1.2;
+					padding-left: 33%;
+				}
+				&:before {
+					content: "our ";
+					display: inline-block;
+					font-size: 7.5vw;
+					padding-right: 2vw;
+					font-family: $avenir-light;
+					transition: $custom-transition;
+					@media screen and ( min-width: 768px ) {
+						font-size: 2.5vw;
+						padding-right: 1vw;
+					}
+				}
 			}
 		}
 	}
 }
+/* END MAIN MENU */
 
 .modal-backdrop {
 	background-color: rgba( #1da39c, 0.9);
-	z-index: 75;
+	z-index: 1040;
 	&.in {
 		opacity: 1;
 	}
 }
 
+/* MODAL EXITS */
+/* END MODAL EXITS */
+
+/* MENU MODAL */
+div#menuModal {
+	padding: 25px 15px 15px;
+	.menu-dialog {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		.menu-header {
+			padding: 15px 0 0;
+			border: none;
+			a.close-exit {
+				display: block;
+				float: right;
+				width: 10vw;
+			}
+		}
+		.menu-body {
+			padding: 15px 0;
+		}
+	}
+}
+/* END MENU MODAL */
+
+/* VIDEO MODAL */
+.modal-video-wrap {
+		display: inline-block;
+		position: absolute;
+		top: 75%;
+		left: 50%;
+		width: 80%;
+		vertical-align: middle;
+		transform: translate(-50%,-50%);
+	div.video-modal-link {
+		i {
+			color: #fff;
+			font-size: 20vw;
+			transition: $custom-transition;
+			@media screen and ( min-width: 768px ) {
+				font-size: 6vw;
+			}
+			@media screen and ( min-width: 992px ) {
+				font-size: 4vw;
+			}
+		}
+	}
+}
+div#videoModal {
+	padding: 25px 15px 15px;
+	.video-dialog {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		.header-video {
+			padding: 15px 0 0;
+			border: none;
+			a.close-exit {
+				display: block;
+				float: right;
+				width: 10vw;
+			}
+		}
+		.video-body {
+			padding: 15px 0;
+			height: 70%;
+		}
+	}
+}
+/* END VIDEO MODAL */
+
 .sub-menu-cols {
 	position: fixed;
+	width: 100%;
+	left: 0;
+	padding: 0 15px;
 	bottom: 25px;
-	z-index: 70;
-}
-
-#sub-menu-1 {
-	list-style-type: none;
-	font-size: 1vw;
-	font-family: $avenir;
-	font-weight: 600;
-	li {
-		position: relative;
-		text-align: left;
-		padding: 15px 0 15px 10px;
-		margin: 0 -1px;
-		width: 23.3%;
-		display: inline-block;
-		background: #ffffff;
-		transition: all 0.2s ease-in-out;
-		a {
-			color: #404043;
-			transition: all 0.2s ease-in-out;
-		}
-		ul.sub-menu {
-			position: absolute;
-			padding: 0;
-			width: 100%;
-			left: 1px;
-			bottom: 3.7vw;
-			transition: all 0.2s ease-in-out;
-			li {
-				width: 100%;
-				padding: 0;
-				height: 0;
-				opacity: 0;
-				transition: all 0.2s ease-in-out;
-				a {
-					white-space: nowrap;
-				}
-			}
-		}
-		&:hover {
-			background: $btn-color;
-			> a {
-				color: #fff;
-				text-decoration: none;
+	z-index: 90;
+	#sub-menu-1 {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		li {
+			position: relative;
+			padding: 10px 0 10px 10px;
+			display: none;
+			margin: 0;
+			background: #ffffff;
+			transform: matrix( 1, 0, 0, 1, 0, 0);
+			transition: $custom-transition;
+			a {
+				color: #404043;
+				transition: $custom-transition;
 			}
 			ul.sub-menu {
-				> li {
-					height: 3.5vw;
-					padding: 15px 0 15px 10px;
-					opacity: 1;
+				position: absolute;
+				padding: 0;
+				width: 100%;
+				left: 1px;
+				bottom: 3.7vw;
+				transition: $custom-transition;
+				li {
+					width: 100%;
+					padding: 0;
+					height: 0;
+					opacity: 0;
+					transition: $custom-transition;
+					a {
+						white-space: nowrap;
+					}
+				}
+			}
+			&:hover {
+				background: $btn-color;
+				> a {
+					color: #fff;
+					text-decoration: none;
+				}
+				ul.sub-menu {
+					> li {
+						height: 3.5vw;
+						padding: 15px 0 15px 10px;
+						opacity: 1;
+					}
 				}
 			}
 		}
@@ -170,10 +407,10 @@ section {
 	position: relative;
 	transition: all .3s ease-in-out;
 	.col-xs-12.video-wrap {
-    position: absolute;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
+		position: absolute;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
 		video {
 			position: absolute;
 			top: 0;
@@ -193,17 +430,100 @@ section {
 		background: rgba( #000, 0.3 );
 		z-index: -1;
 	}
-	.title {
-		margin-top: calc(100vw / 10);
-	}
-	.tag-line {
-		font-weight: bold;
-	}
-	.cta {
-		text-decoration: underline;
-		font-size: 2vw;
-		a {
-			color: #fff;
+	.info-wrap {
+		display: inline-block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 80%;
+		vertical-align: middle;
+		transform: translate(-50%, -50%);
+		.title {
+			font-family: $avenir-light;
+			font-size: 7vw;
+			line-height: 1;
+			text-align: center;
+			transition: $custom-transition;
+			@media screen and ( min-width: 768px ) {
+				font-size: 3.5vw;
+			}
+		}
+		.tag-line {
+			font-family: $avenir-black;
+			text-align: center;
+			font-size: 5vw;
+			line-height: 1;
+			padding-top: 1vw;
+			transition: $custom-transition;
+			@media screen and ( min-width: 768px ) {
+				font-size: 3.3vw;
+			}
+		}
+		.cta {
+			position: relative;
+			font-family: $avenir-light;
+			font-size: 4vw;
+			line-height: 1;
+			text-align: center;
+			padding-top: 3px;
+			padding-top: 1vw;
+			transition: all .2s ease-in-out;
+			@media screen and ( min-width: 768px ) {
+				font-size: 2.2vw;
+			}
+			a {
+				position: relative;
+				display: inline-block;
+				height: 7.5vw;
+				color: #fff;
+				transition: $custom-transition;
+				@media screen and ( min-width: 768px ) {
+					height: 3vw;
+				}
+				.text-slide {
+					position: relative;
+					height: 3vw;
+					line-height: 1;
+					transition: $custom-transition;
+					@media screen and ( min-width: 768px ) {
+						height: 2.5vw;
+					}
+				}
+				.text-top {
+					line-height: 1;
+					opacity: 1;
+					bottom: 0;
+				}
+				.text-bottom {
+					font-family: $avenir-medium;
+					line-height: 1;
+					opacity: 0;
+					bottom: 1.2vw;
+				}
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					border-bottom: 4px solid #fff;
+					transition: $custom-transition;
+				}
+				&:hover {
+					text-decoration: none;
+					.text-top {
+						opacity: 0;
+						bottom: 1.5vw;
+					}
+					.text-bottom {
+						opacity: 1;
+						bottom: 2.5vw;
+					}
+					&:after {
+						border-bottom: 7px solid #fff;
+					}
+				}
+			}
 		}
 	}
 }

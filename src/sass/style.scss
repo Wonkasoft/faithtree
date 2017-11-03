@@ -13,25 +13,19 @@
 
 
 /* SECTIONS */
-section:not(:first-child) {
+section:not(:nth-child(3)) {
 	line-height: 1;
 	padding: 25px 0;
 	.title {
-		font-family: $roboto;
-		font-weight: 300;
-		padding-top: 25px;
-		font-size: 37px;
+		font-family: $avenir-light;
+		padding-top: 5%;
+		font-size: 2vw;
 	}
-
-	.tag-line {
-		font-size: 4.2vw;
-		font-weight: 900;
-		font-stretch: expanded;
-		font-family: $saira;
+	.title-image {
+		padding-top: 10px;
 	}
-
 	.cta {
-			font-family: $roboto;
+			font-family: $avenir-book;
 			text-decoration: underline;
 			font-size: 1.5vw;
 			padding-top:15px;
@@ -40,15 +34,16 @@ section:not(:first-child) {
 /* END SECTIONS */
 
 /* SECTION CHRISTIAN LIVING */
-#christian-living {
+#section-1 {
 	.title {
 		.divider {
 			display: inline-block;
-	    top: 0;
-	    position: relative;
+	    		top: 0;
+	    		position: relative;
 		}
 		.text-italics {
-			font-style: italic;
+			font-family: $avenir-oblique;
+
 		}
 	}
 	.tag-line {
@@ -69,7 +64,7 @@ section:not(:first-child) {
 /* END SECTION CHRISTIAN LIVING */
 
 /* SECTION MARRIAGE & FAMILY */
-#marriage-family {
+#section-2 {
 	color: #000;
 	font-weight: 800;
 	.title {
@@ -78,16 +73,16 @@ section:not(:first-child) {
 	#aof {
 		font-size: 38px;
 		font-weight: 800;
-    position: relative;
-    color: #000;
-    line-height: 1;
-    top: 15px;
-    height: 57px;
-    width: 57px;
-    display: inline-block;
-    vertical-align: text-top;
-    border-top: 10px solid #b84945;
-    border-bottom: 10px solid #b84945;
+		position: relative;
+		color: #000;
+		line-height: 1;
+		top: 15px;
+		height: 57px;
+		width: 57px;
+		display: inline-block;
+		vertical-align: text-top;
+		border-top: 10px solid #b84945;
+		border-bottom: 10px solid #b84945;
 	}
 	.red-text {
 		color: #b84945;
@@ -100,11 +95,11 @@ section:not(:first-child) {
 /* END SECTION MARRIAGE & FAMILY */
 
 /*DISABILITY & GOSPEL SECTION */
-#disability-gospel {
+#section-3 {
 	.title {
 		font-family: roboto;
-    font-style: italic;
-    font-weight: 300;
+		font-style: italic;
+		font-weight: 300;
 	}
 	a {
 		color: #fff;
