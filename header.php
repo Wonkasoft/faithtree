@@ -32,8 +32,9 @@
 		    <!-- Modal content-->
 		    <div class="modal-header menu-header">
 		    	<a class="close-exit" data-dismiss="modal"><img src="<?php echo str_replace( array( 'http:', 'https:' ), '', get_template_directory_uri() . '/assets/images/exit-btn.png'); ?>" class="img-responsive" /> </a>
-		    </div>
+		    </div> <!-- /.modal-header -->
 		      <div class="modal-body menu-body">
+		      	<div class="menu-tabs menu-tab-menu-pop">
 		        <?php
 		        	wp_nav_menu( array ( 
 		        		'theme_location' => 'primary',
@@ -44,6 +45,16 @@
 		        		'fallback_cb' => false,
 		        	) );
 		        ?>
-		      </div>
-		  </div>
-		</div>
+		      </div> <!-- /.menu-tab-1 -->
+		      <div class="menu-tabs menu-tab-shop-menu">
+		        
+		      </div> <!-- /.menu-tab-2 -->
+		      <div class="menu-tabs menu-tab-search-menu">
+		        
+		      </div> <!-- /.menu-tab-3 -->
+		      <div class="menu-tabs menu-tab-news-menu">
+		        
+		      </div> <!-- /.menu-tab-4 -->
+		      </div> <!-- /.modal-body -->
+		  </div> <!-- /.modal-dialog -->
+		</div> <!-- /#menuModal -->

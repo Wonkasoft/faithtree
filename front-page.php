@@ -75,7 +75,7 @@ get_header(); ?>
 		<div class="tag-line">
 			<?php echo get_theme_mod( 'header_tag_line' ); ?>
 		</div> <!-- /col-xs-12 -->
-		<div class="cta">
+		<div class="cta-above">
 			<a href="<?php echo get_permalink( get_theme_mod( 'header_cta_link' ) ); ?>">
 				<div class="text-slide text-top"><?php echo get_theme_mod( 'header_cta_text' ); ?></div>
 				<div class="text-slide text-bottom"><?php echo get_theme_mod( 'header_cta_text' ); ?></div>
@@ -114,9 +114,11 @@ get_header(); ?>
 			<div class="col-xs-12 col-md-10 col-md-offset-1 cta cta-<?php echo $i;?> <?php echo get_theme_mod( 'section_cta_position_'.$i ); ?>">
 				<a href="<?php echo get_permalink( get_theme_mod( 'section_cta_link_'.$i ) ); ?>"><?php echo get_theme_mod( 'section_cta_text_'.$i ); ?></a>
 			</div> <!-- /col-xs-12 -->
+			<div class="info-wrap">
 			<div class="col-xs-12 col-md-10 col-md-offset-1 message message-<?php echo $i;?> <?php echo get_theme_mod( 'section_message_position_'.$i ); ?>">
 				<h2><?php echo get_theme_mod( 'section_message_'.$i ); ?></h2>
 			</div> <!-- /col-xs-12 -->
+		</div> <!-- /.info-wrap -->
 	</section><!-- .row -->
 	<?php
 	}

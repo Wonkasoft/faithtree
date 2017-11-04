@@ -1,14 +1,6 @@
 /**
  *  This file should have all styles for this page that are below the fold of the page.
  */
-/* Media Queries */
-/**
- * @Media ( min-width: $small )
- * @Media ( min-width: $medium )
- * @Media ( min-width: $large )
- * @Media ( min-width: $xlarge )
- */
-/* End Media Queries */
 @import 'above-fold.scss';
 
 
@@ -16,19 +8,154 @@
 section:not(:nth-child(3)) {
 	line-height: 1;
 	padding: 25px 0;
+	position: relative;
 	.title {
 		font-family: $avenir-light;
 		padding-top: 5%;
-		font-size: 2vw;
+		font-size: 7vw;
+		@media screen and ( min-width: 420px ) {
+			font-size: 6vw;
+		}
+		@media screen and ( min-width: 673px ) {
+			font-size: 5.5vw;
+		}
+		@media screen and ( min-width: 768px ) {
+			font-size: 5vw;
+		}
+		@media screen and ( min-width: 992px ) {
+			font-size: 3.5vw;
+		}
+		@media screen and ( min-width: 1200px ) {
+			font-size: 3vw;
+		}
+		@media screen and ( min-width: 1366px ) {
+			font-size: 2.8vw;
+		}
 	}
 	.title-image {
 		padding-top: 10px;
 	}
 	.cta {
-			font-family: $avenir-book;
-			text-decoration: underline;
-			font-size: 1.5vw;
-			padding-top:15px;
+		font-family: $avenir-book;
+		text-decoration: underline;
+		font-size: 7.5vw;
+		padding-top:15px;
+		@media screen and ( min-width: 420px ) {
+			font-size: 6.5vw;
+		}
+		@media screen and ( min-width: 640px ) {
+			font-size: 5.5vw;
+		}
+		@media screen and ( min-width: 768px ) {
+			font-size: 4.6vw;
+		}
+		@media screen and ( min-width: 992px ) {
+			font-size: 3.5vw;
+		}
+		@media screen and ( min-width: 1200px ) {
+			font-size: 3vw;
+		}
+		@media screen and ( min-width: 1366px ) {
+			font-size: 2.2vw;
+		}
+		a {
+			position: relative;
+			display: inline-block;
+			height: 12.5vw;
+			color: #fff;
+			transition: $custom-transition;
+			@media screen and ( min-width: 420px ) {
+				height: 10.5vw;
+			}
+			@media screen and ( min-width: 640px ) {
+				height: 8.5vw;
+			}
+			@media screen and ( min-width: 768px ) {
+				height: 7vw;
+			}
+			@media screen and ( min-width: 992px ) {
+				height: 4vw;
+			}
+			@media screen and ( min-width: 1200px ) {
+				height: 3.8vw;
+			}
+			@media screen and ( min-width: 1366px ) {
+				height: 3vw;
+			}
+			.text-slide {
+				position: relative;
+				height: 3vw;
+				line-height: 1;
+				transition: $custom-transition;
+				@media screen and ( min-width: 768px ) {
+					height: 2.5vw;
+				}
+			}
+			.text-top {
+				line-height: 1;
+				opacity: 1;
+				bottom: 0;
+			}
+			.text-bottom {
+				font-family: $avenir-medium;
+				line-height: 1;
+				opacity: 0;
+				bottom: 1.2vw;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				border-bottom: 4px solid #fff;
+				transition: $custom-transition;
+			}
+			&:hover {
+				text-decoration: none;
+				.text-top {
+					opacity: 0;
+					bottom: 1.5vw;
+				}
+				.text-bottom {
+					opacity: 1;
+					bottom: 2.5vw;
+				}
+				&:after {
+					border-bottom: 7px solid #fff;
+				}
+			}
+		}
+	}
+	.info-wrap {
+		display: inline-block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 80%;
+		vertical-align: middle;
+		transform: translate(-50%, -50%);
+	}
+}
+p {
+	font-size: 4.5vw;
+	@media screen and ( min-width: 420px ) {
+		font-size: 3.5vw;
+	}
+	@media screen and ( min-width: 640px ) {
+		font-size: 2.7vw;
+	}
+	@media screen and ( min-width: 768px ) {
+		font-size: 2.3vw;
+	}
+	@media screen and ( min-width: 992px ) {
+		font-size: 1.7vw;
+	}
+	@media screen and ( min-width: 1200px ) {
+		font-size: 1.4vw;
+	}
+	@media screen and ( min-width: 1366px ) {
+		font-size: 1.2vw;
 	}
 }
 /* END SECTIONS */
@@ -42,7 +169,8 @@ section:not(:nth-child(3)) {
 	    		position: relative;
 		}
 		.text-italics {
-			font-family: $avenir-oblique;
+			font-family: $avenir-light;
+			font-style: italic;
 
 		}
 	}
@@ -70,26 +198,13 @@ section:not(:nth-child(3)) {
 	.title {
 		font-style: italic;
 	}
-	#aof {
-		font-size: 38px;
-		font-weight: 800;
-		position: relative;
-		color: #000;
-		line-height: 1;
-		top: 15px;
-		height: 57px;
-		width: 57px;
-		display: inline-block;
-		vertical-align: text-top;
-		border-top: 10px solid #b84945;
-		border-bottom: 10px solid #b84945;
-	}
-	.red-text {
-		color: #b84945;
-		font-weight: 800;
-	}
-	a {
-		color: #000;
+	.cta {
+		a {
+			color: #000;
+			&:after {
+				border-color: #000;
+			}
+		}
 	}
 }
 /* END SECTION MARRIAGE & FAMILY */
@@ -107,30 +222,104 @@ section:not(:nth-child(3)) {
 }
 /* END DISABILITY & GOSPEL SECTION */
 
+/* PAGE TEMPLATE SECTION */
+#under-header {
+	.page-title {
+		display: inline-block;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		left: 50%;
+		width: 80%;
+		vertical-align: middle;
+		transform: translate(-50%, -50%);
+		h1 {
+			font-family: $avenir-black;
+			font-size: 11.5vw;
+			@media screen and ( min-width: 768px ) {
+				font-size: 3.5vw;
+			}
+			&:before {
+				content: "our ";
+				display: inline-block;
+				font-size: 10vw;
+				padding-right: 10px;
+				font-family: $avenir-light;
+				font-style: italic;
+				transition: $custom-transition;
+				@media screen and ( min-width: 768px ) {
+					font-size: 3vw;
+					padding-right: 15px;
+				}
+			}
+		}
+	}
+}
 #content-section {
 	color: #000;
-	font-size: 18px;
+	font-size: 1.1vw;
+	.partner-img {
+		position: relative;
+		width: 100%;
+		height: 370px;
+		.partner-img-wrap {
+			position: absolute;
+			width: 100%;
+			left: 50%;
+			bottom: -40%;
+			transform: translate(-50%,-50%);
+			> img {
+				position: relative;
+				display: inline-block;
+				margin: 30px;
+			}
+		}
+	}
 }
+/* END PAGE TEMPLATE SECTION */
 
 /* FOOTER AREA */
 #page-footer {
 	background: $footer-color;
 	color: #fff;
-	font-size: 1vw;
+	font-size: 4.6vw;
+	@media screen and ( min-width: 420px ) {
+		font-size: 4vw;
+	}
+	@media screen and ( min-width: 640px ) {
+		font-size: 3vw;
+	}
+	@media screen and ( min-width: 768px ) {
+		font-size: 2.7vw;
+	}
+	@media screen and ( min-width: 992px ) {
+		font-size: 1.7vw;
+	}
+	@media screen and ( min-width: 1200px ) {
+		font-size: 1.5vw;
+	}
+	@media screen and ( min-width: 1366px ) {
+		font-size: 1.3vw;
+	}
 	> .row {
+		margin-bottom: 15px;
 		padding: 15px;
 		height: 55px;
 		&:first-child {
 			height: 260px;
-			div {
+			> div {
+				margin-bottom: 15px;
 				&:first-child {
 					padding-top: calc(100vw / 50);
 				}
 			}
 			.footer-email {
 				display: block;
-				float: right;
+				float: none;
 				padding-top: calc(100vw / 50);
+				@media screen and ( min-width: 768px ) {
+					float: right;
+				}
 				a {
 					color: #fff;
 					transition: all 0.2s ease-in-out;
@@ -138,9 +327,28 @@ section:not(:nth-child(3)) {
 			}
 			.social-links {
 				display: inline-block;
-				font-size: 2vw;
 				padding-left: 10px;
-				float: right;
+				font-size: 8vw;
+				float: none;
+				@media screen and ( min-width: 420px ) {
+					font-size: 7vw;
+				}
+				@media screen and ( min-width: 640px ) {
+					font-size: 6vw;
+				}
+				@media screen and ( min-width: 768px ) {
+					font-size: 4vw;
+					float: right;
+				}
+				@media screen and ( min-width: 992px ) {
+					font-size: 3vw;
+				}
+				@media screen and ( min-width: 1200px ) {
+					font-size: 2.5vw;
+				}
+				@media screen and ( min-width: 1366px ) {
+					font-size: 2vw;
+				}
 				a {
 					color: #fff;
 				}

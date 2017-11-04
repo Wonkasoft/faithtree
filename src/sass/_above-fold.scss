@@ -2,54 +2,69 @@
  *  This is for all css that will affect the elements that are above the fold.
  */
 
-/* Media Queries */
-/**
- * @Media ( min-width: $small )
- * @Media ( min-width: $medium )
- * @Media ( min-width: $large )
- * @Media ( min-width: $xlarge )
- */
-/* End Media Queries */
+/* MEDIA QUERIES */
+/*
+@media screen and ( min-width: 420px ) {
+
+}
+@media screen and ( min-width: 640px ) {
+
+}
+@media screen and ( min-width: 768px ) {
+
+}
+@media screen and ( min-width: 992px ) {
+
+}
+@media screen and ( min-width: 1200px ) {
+
+}
+@media screen and ( min-width: 1366px ) {
+
+}
+*/
+/* END MEDIA QUERIES */
 
 /* TRANSITIONS */
 $custom-transition: all .15s ease-in-out;
 
 /* THEME FONTS */
 @font-face {
-    font-family:  'Avenir Book', sans-serif;
+    font-family: Avenir-Book;
     src: url('../fonts/Avenir-Book.ttf');
 }
 @font-face {
-    font-family:  'Avenir Light', sans-serif;
+    font-family: Avenir-Light;
     src: url('../fonts/Avenir-Light.ttf');
 }
 @font-face {
-    font-family:  'Avenir Medium', sans-serif;
+    font-family: Avenir-Medium;
     src: url('../fonts/Avenir-Medium.ttf');
 }
 @font-face {
-    font-family:  'Avenir Heavy', sans-serif;
+    font-family: Avenir-Heavy;
     src: url('../fonts/Avenir-Heavy.ttf');
 }
 @font-face {
-    font-family:  'Avenir Black', sans-serif;
+    font-family: Avenir-Black;
     src: url('../fonts/Avenir-Black.ttf');
 }
 @font-face {
-    font-family:  'Avenir Roman', sans-serif;
+    font-family: Avenir-Roman;
     src: url('../fonts/Avenir-Roman.ttf');
 }
 @font-face {
-    font-family:  'Avenir Oblique', sans-serif;
+    font-family: Avenir-Oblique;
     src: url('../fonts/Avenir-Oblique.ttf');
+    font-style: italic;
 }
-$avenir-book: 'Avenir Book', sans-serif;
-$avenir-light: 'Avenir Light', sans-serif;
-$avenir-medium: 'Avenir Medium', sans-serif;
-$avenir-heavy: 'Avenir Heavy', sans-serif;
-$avenir-black: 'Avenir Black', sans-serif;
-$avenir-roman: 'Avenir Roman', sans-serif;
-$avenir-oblique: 'Avenir Oblique', sans-serif;
+$avenir-book: Avenir-Book, sans-serif;
+$avenir-light: Avenir-Light, sans-serif;
+$avenir-medium: Avenir-Medium, sans-serif;
+$avenir-heavy: Avenir-Heavy, sans-serif;
+$avenir-black: Avenir-Black, sans-serif;
+$avenir-roman: Avenir-Roman, sans-serif;
+$avenir-oblique: Avenir-Oblique, sans-serif;
 
 /* THEME COLORS */
 $header-color: #3C6595;
@@ -58,7 +73,7 @@ $footer-color: #424244;
 $btn-color: #424244;
 
 /* THEME AREA HEIGHTS */
-$footer-height: 400px;
+$footer-height: 380px;
 
 /* page setup */
 html, body {
@@ -86,11 +101,27 @@ div#page-wrap {
 	display: block;
 	height: 80px;
 	width: 100%;
-	margin: 4vw 0;
+	margin: 0;
+	padding: 4vw;
 	z-index: 100;
 	transition: $custom-transition;
+	@media screen and ( min-width: 420px ) {
+
+	}
+	@media screen and ( min-width: 640px ) {
+
+	}
 	@media screen and ( min-width: 768px ) {
-		margin: 1vw 0;
+		padding: 1vw;
+	}
+	@media screen and ( min-width: 992px ) {
+
+	}
+	@media screen and ( min-width: 1200px ) {
+
+	}
+	@media screen and ( min-width: 1366px ) {
+
 	}
 	.custom-logo {
 		width: 10vw;
@@ -200,7 +231,7 @@ div#page-wrap {
 		@media screen and ( min-width: 1366px ) {
 			padding: 0.2vw 0 0 15px;
 			height: 30px;
-			font-size: 1.5vw;
+			font-size: 1.4vw;
 		}
 	}
 }
@@ -236,12 +267,13 @@ div#page-wrap {
 					content: "our ";
 					display: inline-block;
 					font-size: 7.5vw;
-					padding-right: 2vw;
+					padding-right: 10px;
 					font-family: $avenir-light;
+					font-style: italic;
 					transition: $custom-transition;
 					@media screen and ( min-width: 768px ) {
-						font-size: 2.5vw;
-						padding-right: 1vw;
+						font-size: 3vw;
+						padding-right: 15px;
 					}
 				}
 			}
@@ -345,15 +377,51 @@ div#videoModal {
 		padding: 0;
 		li {
 			position: relative;
-			padding: 10px 0 10px 10px;
-			display: none;
-			margin: 0;
+			padding: 15px 0 10px 15px;
+			display: inline-block;
+			float: left;
+			margin-right: 1px;
 			background: #ffffff;
 			transform: matrix( 1, 0, 0, 1, 0, 0);
 			transition: $custom-transition;
 			a {
+				position: relative;
+				display: inline-block;
+				line-height: 1;
 				color: #404043;
 				transition: $custom-transition;
+				.text-slide {
+					position: absolute;
+					white-space: nowrap;
+					line-height: 1;
+					transition: $custom-transition;
+				}
+				.text-top {
+					line-height: 1;
+					opacity: 1;
+					bottom: 0;
+				}
+				.text-bottom {
+					font-family: $avenir-book;
+					line-height: 1;
+					opacity: 0;
+					bottom: -1vw;
+				}
+			}
+			&:hover {
+				background: #404043;
+				a {
+					text-decoration: none;
+					.text-top {
+						opacity: 0;
+						bottom: 1.5vw;
+					}
+					.text-bottom {
+						color: #fff;
+						opacity: 1;
+						bottom: 0;
+					}
+				}
 			}
 			ul.sub-menu {
 				position: absolute;
@@ -370,20 +438,6 @@ div#videoModal {
 					transition: $custom-transition;
 					a {
 						white-space: nowrap;
-					}
-				}
-			}
-			&:hover {
-				background: $btn-color;
-				> a {
-					color: #fff;
-					text-decoration: none;
-				}
-				ul.sub-menu {
-					> li {
-						height: 3.5vw;
-						padding: 15px 0 15px 10px;
-						opacity: 1;
 					}
 				}
 			}
@@ -459,7 +513,7 @@ section {
 				font-size: 3.3vw;
 			}
 		}
-		.cta {
+		.cta-above {
 			position: relative;
 			font-family: $avenir-light;
 			font-size: 4vw;
