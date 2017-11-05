@@ -1,11 +1,13 @@
 var wh = window.innerHeight,
 ww = window.innerWidth,
 main = document.getElementById('main'),
+sub_menu1 = document.getElementById('sub-menu-1'),
 sections = main.getElementsByTagName('section'),
 section_id = [],
 section_offsets = [],
 current_section = '',
 page_footer = '',
+currentY = '',
 scrollY = 0,
 distance = 40,
 speed = 15,
@@ -30,11 +32,14 @@ window.onresize = function () {
 	}
 };
 
-window.pageYOffset.onchange = function() {alert('it worked!');};
+window.onscroll = function () {
+	currentY = window.pageYOffset;
+	current_offset = getClosestSection( currentY, section_offsets );
+	console.log(current_offset);
+	scroll_setup();
+};
 
 page_footer = document.getElementById('page-footer').offsetTop;
-
-/*document.onwheel = scroll_setup;
 
 function scroll_setup() {
 	if (!canCall) {
@@ -110,10 +115,10 @@ function scroller_coster_down(el) {
 			}
 		}
 	}
-};
+};*/
 
 function getClosestSection( num, array ) {
-	var i = 0, closest, closestDiff, currentDiff, count = 1;
+	var i = 0, closest, closestDiff, currentDiff;
 	if ( array.length ) {
 		closest = array[0];
 		for (i; i < array.length; i++) {
@@ -130,8 +135,6 @@ function getClosestSection( num, array ) {
 
 			if ( currentDiff < closestDiff ) {
 				closest = array[i];
-				console.log(closest);
-				break;
 			}
 		}
 		//returns first element that is closest to number
@@ -139,7 +142,7 @@ function getClosestSection( num, array ) {
 	}
 	//no length
 	return false;
-};*/
+}
 
 function set_section_heights() {
 	wh = window.innerHeight;
@@ -147,7 +150,7 @@ function set_section_heights() {
 		if ( sections[i].id == 'under-header' || sections[i].id == 'content-section' ) {
 
 		} else {
-			sections[i].style.height = wh + 'px';
+			sections[i].style.height = wh + 5 + 'px';
 			section_id.push( sections[i].id );
 			section_offsets.push( sections[i].offsetTop );
 		}
@@ -163,6 +166,10 @@ function set_bottom_menu() {
 	document.getElementById('main').style.paddingBottom = '450px';
 
 	for (var i = 0; i < bottom_menu.length; i++) {
+		if ( i === 0 ) {
+			bottom_menu[i].classList.add( "active-color" );
+		}
+		
 		bottom_menu[i].style.width = li_width + '%';
 		add_divs = bottom_menu[i].children[0].innerHTML;
 		bottom_menu[i].children[0].innerHTML = '<div class="text-slide text-top">' + add_divs + '</div><div class="text-slide text-bottom">' + add_divs + '</div>';

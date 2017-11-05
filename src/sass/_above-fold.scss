@@ -384,6 +384,14 @@ div#videoModal {
 			background: #ffffff;
 			transform: matrix( 1, 0, 0, 1, 0, 0);
 			transition: $custom-transition;
+			&.active-color {
+				background: #404043;
+				a {
+					.text-top {
+						color: #fff;
+					}
+				}
+			}
 			a {
 				position: relative;
 				display: inline-block;
