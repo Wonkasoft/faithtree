@@ -35,11 +35,48 @@ window.onresize = function () {
 window.onscroll = function () {
 	currentY = window.pageYOffset;
 	current_offset = getClosestSection( currentY, section_offsets );
-	console.log(current_offset);
-	scroll_setup();
+	console.log(currentY + ' offset when changes ' + current_offset);
+	var mid_switch = '';
+	for (var i = 0; i < sections.length; i++) {
+		if ( sections[i].offsetTop == current_offset ) {
+			var menu_childs = sub_menu1.children;
+			for (var w = 0; w < menu_childs.length; w++) {
+				if ( menu_childs[w].children[0].classList.contains( 'active-color' ) ) {
+					menu_childs[w].children[0].classList.remove( 'active-color' );
+					break;
+				}
+			}
+			menu_childs[i].children[0].classList.add( 'active-color' );
+		}
+	}
 };
 
 page_footer = document.getElementById('page-footer').offsetTop;
+
+var top_menu = document.querySelectorAll('.top-menu');
+for (var i = 0; i < top_menu.length; i++) {
+	top_menu[i].onclick = function () {
+		var menu_btn = this.getAttribute('name');
+		// menu-tabs reset
+		var menu_tabs = document.getElementsByClassName('menu-tabs');
+		for (var i = 0; i < menu_tabs.length; i++) {
+			if ( menu_tabs[i].classList.contains( 'active' ) ) {
+				menu_tabs[i].classList.remove( 'active' );
+			}
+		}
+		if ( menu_btn == 'menu-pop' ) {
+			document.querySelector( '.menu-tab-menu-pop' ).classList.add( 'active' );
+		}
+		if ( menu_btn == 'search-menu' ) {
+			document.querySelector( '.menu-tab-search-menu' ).classList.add( 'active' );
+		}
+		if ( menu_btn == 'news-menu' ) {
+			document.querySelector( '.menu-tab-news-menu' ).classList.add( 'active' );
+		}
+	};
+}
+
+
 
 function scroll_setup() {
 	if (!canCall) {
@@ -49,7 +86,7 @@ function scroll_setup() {
 		setTimeout ( function() {
 			canCall = true;
 		}, 500);
-		var currentY = window.pageYOffset;
+		currentY = window.pageYOffset;
 			console.log(currentY +' new currentY');
 			console.log(section_offsets +' array');
 		current_offset = getClosestSection( currentY, section_offsets );
@@ -115,7 +152,7 @@ function scroller_coster_down(el) {
 			}
 		}
 	}
-};*/
+};
 
 function getClosestSection( num, array ) {
 	var i = 0, closest, closestDiff, currentDiff;
@@ -167,7 +204,7 @@ function set_bottom_menu() {
 
 	for (var i = 0; i < bottom_menu.length; i++) {
 		if ( i === 0 ) {
-			bottom_menu[i].classList.add( "active-color" );
+			bottom_menu[i].children[0].classList.add( "active-color" );
 		}
 		
 		bottom_menu[i].style.width = li_width + '%';

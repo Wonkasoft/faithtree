@@ -5,7 +5,7 @@
 
 
 /* SECTIONS */
-section:not(:nth-child(3)) {
+section:not(:nth-child(4)) {
 	line-height: 1;
 	padding: 25px 0;
 	position: relative;
@@ -139,6 +139,8 @@ section:not(:nth-child(3)) {
 }
 p {
 	font-size: 4.5vw;
+	padding: 15px;
+	transition: $custom-transition;
 	@media screen and ( min-width: 420px ) {
 		font-size: 3.5vw;
 	}
@@ -157,6 +159,18 @@ p {
 	@media screen and ( min-width: 1366px ) {
 		font-size: 1.2vw;
 	}
+}
+.faithtree-btn {
+	background: rgba(0,0,0,1);
+	padding: 18px 68px;
+	text-decoration: none;
+	color:#fff;
+	font-size: 1vw;
+}
+
+.faithtree-btn:hover {
+	background: #ccc;
+	color: #000;
 }
 /* END SECTIONS */
 
@@ -299,7 +313,7 @@ p {
 		font-size: 1.5vw;
 	}
 	@media screen and ( min-width: 1366px ) {
-		font-size: 1.3vw;
+		font-size: 1vw;
 	}
 	> .row {
 		margin-bottom: 15px;
