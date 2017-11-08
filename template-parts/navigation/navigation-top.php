@@ -25,7 +25,7 @@
 		<!-- Trigger the modal with a button -->
 		<a class="pull-right top-menu" name="menu-pop" data-toggle="modal" data-target="#menuModal">
 			<div class="burger-menu"><img src="<?php echo str_replace( array( 'http:', 'https:' ), '', get_template_directory_uri() . '/assets/images/burger-menu.png'); ?>" /> <span>MENU</span></div></a>
-		<a class="pull-right top-menu" name="shop-menu" data-toggle="modal" data-target="#menuModal">
+		<a class="pull-right top-menu" name="shop-menu" href="/cart">
 			<div class="shopping-bag"><img src="<?php echo str_replace( array( 'http:', 'https:' ), '', get_template_directory_uri() . '/assets/images/shopping-bag.png'); ?>" /> <span>SHOPPING BAG</span></div></a>
 		<a class="pull-right top-menu" name="search-menu" data-toggle="modal" data-target="#menuModal">
 			<div class="search-img"><img src="<?php echo str_replace( array( 'http:', 'https:' ), '', get_template_directory_uri() . '/assets/images/search-img.png'); ?>" /> <span>SEARCH</span></div></a>

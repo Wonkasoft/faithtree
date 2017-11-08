@@ -5,202 +5,254 @@
 
 
 /* SECTIONS */
-section:not(:nth-child(4)) {
-	line-height: 1;
-	padding: 25px 0;
-	position: relative;
-	.title {
-		font-family: $avenir-light;
-		padding-top: 5%;
-		font-size: 7vw;
-		@media screen and ( min-width: 420px ) {
-			font-size: 6vw;
-		}
-		@media screen and ( min-width: 673px ) {
-			font-size: 5.5vw;
-		}
-		@media screen and ( min-width: 768px ) {
-			font-size: 5vw;
-		}
-		@media screen and ( min-width: 992px ) {
-			font-size: 3.5vw;
-		}
-		@media screen and ( min-width: 1200px ) {
-			font-size: 3vw;
-		}
-		@media screen and ( min-width: 1366px ) {
-			font-size: 2.8vw;
-		}
-	}
-	.title-image {
-		padding-top: 10px;
-	}
-	.cta {
-		font-family: $avenir-book;
-		text-decoration: underline;
-		font-size: 7.5vw;
-		padding-top:15px;
-		@media screen and ( min-width: 420px ) {
-			font-size: 6.5vw;
-		}
-		@media screen and ( min-width: 640px ) {
-			font-size: 5.5vw;
-		}
-		@media screen and ( min-width: 768px ) {
-			font-size: 4.6vw;
-		}
-		@media screen and ( min-width: 992px ) {
-			font-size: 3.5vw;
-		}
-		@media screen and ( min-width: 1200px ) {
-			font-size: 3vw;
-		}
-		@media screen and ( min-width: 1366px ) {
-			font-size: 2.2vw;
-		}
-		a {
-			position: relative;
-			display: inline-block;
-			height: 12.5vw;
-			color: #fff;
+.home {
+	section:not(:nth-child(4)) {
+		line-height: 1;
+		padding: 25px 0;
+		position: relative;
+		transition: $custom-transition;
+		.title {
+			font-family: $avenir-light;
+			padding-top: 8%;
+			font-size: 25px;
 			transition: $custom-transition;
-			@media screen and ( min-width: 420px ) {
-				height: 10.5vw;
-			}
-			@media screen and ( min-width: 640px ) {
-				height: 8.5vw;
-			}
-			@media screen and ( min-width: 768px ) {
-				height: 7vw;
-			}
-			@media screen and ( min-width: 992px ) {
-				height: 4vw;
-			}
-			@media screen and ( min-width: 1200px ) {
-				height: 3.8vw;
-			}
-			@media screen and ( min-width: 1366px ) {
-				height: 3vw;
-			}
-			.text-slide {
+		}
+		.title-image {
+			padding-top: 15px;
+			transition: $custom-transition;
+		}
+		.cta {
+			font-family: $avenir-book;
+			text-decoration: underline;
+			font-size: 22px;
+			padding-top:15px;
+			transition: $custom-transition;
+			a {
 				position: relative;
-				height: 3vw;
-				line-height: 1;
+				display: inline-block;
+				height: 32px;
+				color: #fff;
 				transition: $custom-transition;
-				@media screen and ( min-width: 768px ) {
-					height: 2.5vw;
+				.text-slide {
+					position: relative;
+					height: 29px;
+					transition: $custom-transition;
 				}
-			}
-			.text-top {
-				line-height: 1;
-				opacity: 1;
-				bottom: 0;
-			}
-			.text-bottom {
-				font-family: $avenir-medium;
-				line-height: 1;
-				opacity: 0;
-				bottom: 1.2vw;
-			}
-			&:after {
-				content: "";
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				border-bottom: 4px solid #fff;
-				transition: $custom-transition;
-			}
-			&:hover {
-				text-decoration: none;
 				.text-top {
-					opacity: 0;
-					bottom: 1.5vw;
+					opacity: 1;
+					bottom: 0;
 				}
 				.text-bottom {
-					opacity: 1;
-					bottom: 2.5vw;
+					font-family: $avenir-medium;
+					opacity: 0;
+					bottom: 18px;
 				}
 				&:after {
-					border-bottom: 7px solid #fff;
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					border-bottom: 4px solid #fff;
+					transition: $custom-transition;
 				}
 			}
 		}
-	}
-	.info-wrap {
-		display: inline-block;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 80%;
-		vertical-align: middle;
-		transform: translate(-50%, -50%);
+		.info-wrap {
+			display: inline-block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 80%;
+			vertical-align: middle;
+			transform: translate(-50%, -50%);
+		}
+		@media screen and ( min-width: 420px ) {
+			.title {
+				font-size: 30px;
+			}
+			.title-image {
+				padding-top: 15px;
+			}
+			.cta {
+				font-size: 22px;
+				padding-top:15px;
+				a {
+					height: 26px;
+					.text-slide {
+						height: 26px;
+					}
+					.text-top {
+						bottom: 0;
+					}
+					.text-bottom {
+						opacity: 0;
+						bottom: 16px;
+					}
+				}
+			}
+		}
+		@media screen and ( min-width: 640px ) {
+			.title {
+				font-size: 38px;
+			}
+			.title-image {
+				padding-top: 15px;
+			}
+			.cta {
+				font-size: 22px;
+				padding-top:15px;
+				a {
+					height: 30px;
+					.text-slide {
+						height: 30px;
+					}
+					.text-top {
+						bottom: 0;
+					}
+					.text-bottom {
+						opacity: 0;
+						bottom: 16px;
+					}
+					&:hover {
+						text-decoration: none;
+						.text-top {
+							opacity: 0;
+							bottom: 10px;
+						}
+						.text-bottom {
+							opacity: 1;
+							bottom: 30px;
+						}
+						&:after {
+							border-bottom: 7px solid #fff;
+						}
+					}
+				}
+			}
+		}
+		@media screen and ( min-width: 768px ) {
+			.title {
+				font-size: 40px;
+			}
+			.title-image {
+				padding-top: 15px;
+			}
+			.cta {
+				font-size: 28px;
+				padding-top:15px;
+				a {
+					height: 38px;
+					.text-slide {
+						height: 38px;
+					}
+					.text-top {
+						bottom: 0;
+					}
+					.text-bottom {
+						opacity: 0;
+						bottom: 18px;
+					}
+					&:hover {
+						text-decoration: none;
+						.text-top {
+							opacity: 0;
+							bottom: 10px;
+						}
+						.text-bottom {
+							opacity: 1;
+							bottom: 38px;
+						}
+						&:after {
+							border-bottom: 7px solid #fff;
+						}
+					}
+				}
+			}
+		}
+		@media screen and ( min-width: 992px ) {
+			.title {
+				font-size: 40px;
+			}
+			.title-image {
+				padding-top: 15px;
+			}
+			.cta {
+				font-size: 28px;
+				padding-top:15px;
+				a {
+					height: 38px;
+					.text-slide {
+						height: 38px;
+					}
+					.text-top {
+						bottom: 0;
+					}
+					.text-bottom {
+						opacity: 0;
+						bottom: 18px;
+					}
+					&:hover {
+						text-decoration: none;
+						.text-top {
+							opacity: 0;
+							bottom: 10px;
+						}
+						.text-bottom {
+							opacity: 1;
+							bottom: 38px;
+						}
+						&:after {
+							border-bottom: 7px solid #fff;
+						}
+					}
+				}
+			}
+		}
 	}
 }
 p {
-	font-size: 4.5vw;
+	font-size: 18px;
 	padding: 15px;
 	transition: $custom-transition;
-	@media screen and ( min-width: 420px ) {
-		font-size: 3.5vw;
-	}
-	@media screen and ( min-width: 640px ) {
-		font-size: 2.7vw;
-	}
-	@media screen and ( min-width: 768px ) {
-		font-size: 2.3vw;
-	}
-	@media screen and ( min-width: 992px ) {
-		font-size: 1.7vw;
-	}
-	@media screen and ( min-width: 1200px ) {
-		font-size: 1.4vw;
-	}
-	@media screen and ( min-width: 1366px ) {
-		font-size: 1.2vw;
-	}
-}
-.faithtree-btn {
-	background: rgba(0,0,0,1);
-	padding: 18px 68px;
-	text-decoration: none;
-	color:#fff;
-	font-size: 1vw;
 }
 
-.faithtree-btn:hover {
-	background: #ccc;
-	color: #000;
-}
 /* END SECTIONS */
 
 /* SECTION CHRISTIAN LIVING */
 #section-1 {
+	color: #fff;
+	transition: $custom-transition;
 	.title {
+		transition: $custom-transition;
 		.divider {
 			display: inline-block;
-	    		top: 0;
-	    		position: relative;
+  		top: 0;
+  		position: relative;
+			transition: $custom-transition;
 		}
 		.text-italics {
 			font-family: $avenir-light;
 			font-style: italic;
-
+			transition: $custom-transition;
 		}
 	}
 	.tag-line {
 		text-weight: bold;
 		letter-spacing: 15px;
+		transition: $custom-transition;
 		.highlight {
 			letter-spacing: 2px;
 			text-transform: uppercase;
 			padding: 8px;
 			background: #ffde16;
 			display: inline-block;
+			transition: $custom-transition;
 		}
 	}
 	a {
 		color: #fff;
+		transition: $custom-transition;
 	}
 }
 /* END SECTION CHRISTIAN LIVING */
@@ -209,14 +261,20 @@ p {
 #section-2 {
 	color: #000;
 	font-weight: 800;
+	transition: $custom-transition;
 	.title {
+		font-family: $avenir-light;
 		font-style: italic;
+		transition: $custom-transition;
 	}
 	.cta {
+		transition: $custom-transition;
 		a {
 			color: #000;
+			transition: $custom-transition;
 			&:after {
 				border-color: #000;
+				transition: $custom-transition;
 			}
 		}
 	}
@@ -225,68 +283,246 @@ p {
 
 /*DISABILITY & GOSPEL SECTION */
 #section-3 {
+	transition: $custom-transition;
 	.title {
-		font-family: roboto;
+		font-family: $avenir-light;
 		font-style: italic;
 		font-weight: 300;
+		color: #fff;
+		transition: $custom-transition;
 	}
 	a {
 		color: #fff;
+		transition: $custom-transition;
 	}
 }
 /* END DISABILITY & GOSPEL SECTION */
 
 /* PAGE TEMPLATE SECTION */
-#under-header {
+.fl-rich-text {
 	.page-title {
 		display: inline-block;
 		position: absolute;
 		text-align: center;
 		top: 50%;
 		left: 50%;
-		width: 80%;
-		vertical-align: middle;
+		width: 100%;
 		transform: translate(-50%, -50%);
+		transition: $custom-transition;
 		h1 {
 			font-family: $avenir-black;
-			font-size: 11.5vw;
-			@media screen and ( min-width: 768px ) {
-				font-size: 3.5vw;
-			}
+			font-size: 60px;
+			transition: $custom-transition;
 			&:before {
 				content: "our ";
 				display: inline-block;
-				font-size: 10vw;
-				padding-right: 10px;
+				font-size: 50px;
+				padding-right: 15px;
 				font-family: $avenir-light;
 				font-style: italic;
 				transition: $custom-transition;
-				@media screen and ( min-width: 768px ) {
-					font-size: 3vw;
-					padding-right: 15px;
-				}
 			}
 		}
 	}
 }
+
 #content-section {
 	color: #000;
-	font-size: 1.1vw;
+	transition: $custom-transition;
 	.partner-img {
 		position: relative;
 		width: 100%;
 		height: 370px;
+		transition: $custom-transition;
 		.partner-img-wrap {
 			position: absolute;
 			width: 100%;
 			left: 50%;
 			bottom: -40%;
 			transform: translate(-50%,-50%);
+			transition: $custom-transition;
 			> img {
 				position: relative;
 				display: inline-block;
 				margin: 30px;
+				transition: $custom-transition;
 			}
+		}
+	}
+	.landing-content {
+		transition: $custom-transition;
+		.entry-content {
+			margin: auto -15px;
+			transition: $custom-transition;
+		}
+	}
+}
+
+.blog-filter {
+	padding: 15px;
+	transition: $custom-transition;
+}
+
+.blog {
+	select[name="topic"]{
+		margin: 5px;
+    padding: 10px;
+    border: none;
+	}
+}
+
+.blog-wrap {
+	position: relative;
+	transition: $custom-transition;
+	> div.container-fluid {
+		transition: $custom-transition;
+		> .row {
+			height: 100%;
+			transition: $custom-transition;
+			.blog-overlay {
+				position: relative;
+				height: 100%;
+				background: rgba(#fff, 0.4);
+				transition: $custom-transition;
+				.info-wrap {
+					width: 75%;
+					padding: 25px;
+					margin: auto;
+					transition: $custom-transition;
+					p {
+						padding: 0;
+						transition: $custom-transition;
+					}
+					a {
+						color: #000;
+						transition: $custom-transition;
+					}
+					article {
+						text-align: left;
+						.entry-header {
+							.tags-links {
+								a {
+									color: #000;
+								}
+							}
+							.entry-meta {
+								.posted-on {
+									a {
+										color: #000;
+									}
+								}
+							}
+						}
+						.entry-footer {
+							text-align: center;
+						}
+					}
+				}
+			}	
+		}
+	}
+}
+
+.download-form {
+	background: #fff;
+	width: 100%;
+	input.wpcf7-form-control {
+		width: 100%;
+		border: none;
+		border-bottom: 2px solid #000;
+		margin-bottom: 18px;
+	}
+	input[type=submit] {
+		border: none;
+		width: 100%;
+    margin-bottom: 0;
+		transition: $custom-transition;
+	}
+	p {
+    margin: 0;
+    padding: 20px 15px 0;
+    strong {
+    	color: #000;
+    }
+	}
+}
+
+time.updated {
+	display: none;
+}
+
+.woocommerce button.button.alt {
+background: #000;
+   display: inline-block;
+   padding: 18px 5px;
+   min-width: 210px;
+   text-decoration: none;
+   color: #fff;
+   font-size: 15px;
+   transition: all .15s ease-in-out;
+}
+
+.woocommerce a.button.alt {
+background:#000;
+color: #fff;
+}
+
+.woocommerce input.button.alt {
+background: #000;
+color: #fff;
+}
+
+.woocommerce input.button.alt:hover {
+background: #ccc;
+color: #fff;
+}
+
+.woocommerce input.button.alt {
+background:#000;
+color:#fff;
+}
+
+.woocommerce a.button.alt:hover {
+background:#ccc;
+}
+
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order {
+background:#000;
+color: #fff;
+}
+
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order:hover {
+background: #000;
+color:#fff;
+}
+
+.woocommerce div.product div.images img {
+width: 60%;
+}
+
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+font-size: 3em;
+}
+
+.fl-rich-text a {
+   text-decoration: none;
+   color: #000;
+}
+
+.faithtree-btn {
+	background: #000;
+	display: inline-block;
+	padding: 18px 5px;
+	min-width: 210px;
+	text-decoration: none;
+	color: #fff !important;
+	font-size: 15px;
+	text-align: center;
+	transition: $custom-transition;
+	@media screen and ( min-width: 768px ) {
+		&:hover {
+			background: #ccc;
+			color: #000 !important;
 		}
 	}
 }
@@ -296,25 +532,7 @@ p {
 #page-footer {
 	background: $footer-color;
 	color: #fff;
-	font-size: 4.6vw;
-	@media screen and ( min-width: 420px ) {
-		font-size: 4vw;
-	}
-	@media screen and ( min-width: 640px ) {
-		font-size: 3vw;
-	}
-	@media screen and ( min-width: 768px ) {
-		font-size: 2.7vw;
-	}
-	@media screen and ( min-width: 992px ) {
-		font-size: 1.7vw;
-	}
-	@media screen and ( min-width: 1200px ) {
-		font-size: 1.5vw;
-	}
-	@media screen and ( min-width: 1366px ) {
-		font-size: 1vw;
-	}
+	font-size: 14px;
 	> .row {
 		margin-bottom: 15px;
 		padding: 15px;
@@ -322,15 +540,12 @@ p {
 		&:first-child {
 			height: 260px;
 			> div {
+				padding-top: calc(100vw / 50);
 				margin-bottom: 15px;
-				&:first-child {
-					padding-top: calc(100vw / 50);
-				}
 			}
 			.footer-email {
 				display: block;
 				float: none;
-				padding-top: calc(100vw / 50);
 				@media screen and ( min-width: 768px ) {
 					float: right;
 				}
@@ -342,35 +557,25 @@ p {
 			.social-links {
 				display: inline-block;
 				padding-left: 10px;
-				font-size: 8vw;
+				font-size: 32px;
 				float: none;
-				@media screen and ( min-width: 420px ) {
-					font-size: 7vw;
-				}
-				@media screen and ( min-width: 640px ) {
-					font-size: 6vw;
-				}
-				@media screen and ( min-width: 768px ) {
-					font-size: 4vw;
-					float: right;
-				}
-				@media screen and ( min-width: 992px ) {
-					font-size: 3vw;
-				}
-				@media screen and ( min-width: 1200px ) {
-					font-size: 2.5vw;
-				}
-				@media screen and ( min-width: 1366px ) {
-					font-size: 2vw;
-				}
 				a {
 					color: #fff;
 				}
 				&:first-of-type {
 					clear: right;
 				}
+				@media screen and ( min-width: 768px ) {
+					float: right;
+				}
 			}
 		}
+	}
+	@media screen and ( min-width: 420px ) {
+		font-size: 18px;
+	}
+	@media screen and ( min-width: 640px ) {
+		font-size: 20px;
 	}
 }
 

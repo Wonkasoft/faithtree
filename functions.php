@@ -32,6 +32,18 @@ function faithtree_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	/**
+ * Add WooCommerce Theme support for theme
+ * @since  1.0.0 [init theme creation]
+ */
+	add_theme_support( 'woocommerce' );
+
+	/**
+ * WooCommerce product setup
+ */
+require get_parent_theme_file_path( '/inc/woocommerce-setup.php' );
+
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -92,6 +104,7 @@ function faithtree_scripts() {
 		wp_enqueue_style( $style, str_replace( array( 'http:', 'https:' ), 'https:', get_template_directory_uri() . '/assets/css/bootstrap.min.css'), '3.3.7', 'all' );
 	}
 
+	wp_enqueue_style( 'fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', '4.7.0', 'all' );
 	wp_enqueue_style( 'faithtree-style', get_stylesheet_uri() );
 
 	// Check to see if bootstrap js is already enqueue before setting the enqueue
@@ -115,3 +128,17 @@ add_action( 'wp_enqueue_scripts', 'faithtree_scripts' );
  * Customizer additions.
  */
 require get_parent_theme_file_path( '/inc/customizer.php' );
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+
+
+

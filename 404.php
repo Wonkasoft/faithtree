@@ -9,53 +9,21 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'faithtree' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'faithtree' ); ?></p>
-
-					<?php
-						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'faithtree' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'faithtree' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+<main id="main" class="container-fluid">
+	<section id="above-fold" class="row">
+		<div class="col-xs-12 col-md-10 col-md-offset-1 text-center title">
+			<h1>PAGE NOT FOUND</h1>
+			<h2>404 Error</h2>
+		</div> <!-- /col-xs-12 -->
+		<div class="col-xs-12 col-md-10 col-md-offset-1 text-center">
+			<h2>We've looked everywhere but can't find that page, sorry.</h2>
+			<h3>Let's start over click the home button</h3>
+		</div> <!-- /col-xs-12 -->
+		<div class="col-xs-12 col-md-10 col-md-offset-1 text-center">
+			<a href="/" class="faithtree-btn">Home Page</a>
+		</div> <!-- /col-xs-12 -->
+	</section><!-- .row -->
+</main><!-- #main -->
 
 <?php
 get_footer();

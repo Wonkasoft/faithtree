@@ -15,7 +15,8 @@
 get_header(); ?>
 <main id="main">
 		<section id="under-header">
-					<div class="page-title">
+					<div class="tag-title">
+					<h1><?php single_tag_title( "", true ); ?></h1>
 
 		<?php
 		if ( have_posts() ) :
@@ -23,7 +24,6 @@ get_header(); ?>
 			if (  is_home() && ! is_front_page() ) : ?>
 			
 				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 					<h1 class="page-title"><?php single_post_title(); ?></h1>
 				</header>
 			<?php

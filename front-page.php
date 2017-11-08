@@ -16,7 +16,7 @@ get_header(); ?>
 <main id="main" class="container-fluid">
 	<?php
 	if (!is_page_template()) { ?>
-	<div class="sub-menu-cols">
+	<div class="sub-menu-cols visible-md visible-lg">
 		<?php
 				wp_nav_menu( array ( 
 					'theme_location' => 'sub-menu',
@@ -28,6 +28,23 @@ get_header(); ?>
 				) );
 			?>
 	</div><!-- col-xs-12 -->
+
+	<div class="sub-menu-cols visible-sm visible-xs">
+		<div class="panel-group">
+	    <div class="panel panel-default">
+	      <div class="panel-heading">
+	        <h4 class="panel-title">
+	          <a id="mobile-menu-primary" data-toggle="collapse" href="#mobile-sub-menu">Choose a category</a>
+	        </h4>
+	      </div>
+	      <div id="mobile-sub-menu" class="panel-collapse collapse">
+	        <div class="panel-body"><a href="#section-1">Christian Living</a></div>
+	        <div class="panel-body"><a href="#section-2">Marriage & Family</a></div>
+	        <div class="panel-body"><a href="#section-3">Disability and the Gospel</a></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 	<?php
 	} ?>
 	<?php
@@ -63,8 +80,8 @@ get_header(); ?>
 	}
 	?>
 	<section id="above-fold" class="row">
-		<div class="col-xs-12 video-wrap">
-		<video loop muted autoplay poster="<?php echo get_theme_mod( 'background_image_section_1' );?>" class="fullscreen-bg__video">
+		<div class="col-xs-12 video-wrap visible-md visible-lg">
+		<video id="video" preload="none" loop muted autoplay poster="<?php echo get_theme_mod( 'background_image_section_1' );?>" class="fullscreen-bg__video">
         <source src="<?php echo wp_get_attachment_url( get_theme_mod( 'featured_header_media' ) ); ?>" type="video/mp4">
     </video>
   </div> <!-- /col-xs-12 video-wrap -->
