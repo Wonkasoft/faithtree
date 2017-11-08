@@ -43,12 +43,13 @@ window.onscroll = function () {
 		mast.classList.remove( 'sticky-stuck' );
 	}
 };
-
-document.querySelector( '#mobile-menu-primary' ).onblur = function () {
-	setTimeout( function () { 
-		document.querySelector( '#mobile-menu-primary' ).setAttribute('aria-expanded', 'false');
-		document.querySelector( '#mobile-sub-menu' ).classList.remove( 'in' );
-	}, 20);
+if (document.querySelector( '#mobile-menu-primary' )) {
+	document.querySelector( '#mobile-menu-primary' ).onblur = function () {
+		setTimeout( function () { 
+			document.querySelector( '#mobile-menu-primary' ).setAttribute('aria-expanded', 'false');
+			document.querySelector( '#mobile-sub-menu' ).classList.remove( 'in' );
+		}, 20);
+	}
 };
 
 if ( document.querySelector( '[data-target="#videoModal"]' ) ) {
