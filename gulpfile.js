@@ -79,9 +79,9 @@ gulp.task('js', function () {
 
 		.pipe(plumber(plumberErrorHandler))
  
-		.pipe(jshint())
+		// .pipe(jshint())
  
-		.pipe(jshint.reporter('fail'))
+		// .pipe(jshint.reporter('fail'))
 
 		.pipe(jsmin())
 		 

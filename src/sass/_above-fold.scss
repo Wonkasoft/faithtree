@@ -30,33 +30,33 @@ $custom-transition: all .15s ease-in-out;
 
 /* THEME FONTS */
 @font-face {
-    font-family: Avenir-Book;
-    src: url(../fonts/Avenir-Book.ttf);
+	font-family: Avenir-Book;
+	src: url(../fonts/Avenir-Book.ttf);
 }
 @font-face {
-    font-family: Avenir-Light;
-    src: url(../fonts/Avenir-Light.ttf);
+	font-family: Avenir-Light;
+	src: url(../fonts/Avenir-Light.ttf);
 }
 @font-face {
-    font-family: Avenir-Medium;
-    src: url(../fonts/Avenir-Medium.ttf);
+	font-family: Avenir-Medium;
+	src: url(../fonts/Avenir-Medium.ttf);
 }
 @font-face {
-    font-family: Avenir-Heavy;
-    src: url(../fonts/Avenir-Heavy.ttf);
+	font-family: Avenir-Heavy;
+	src: url(../fonts/Avenir-Heavy.ttf);
 }
 @font-face {
-    font-family: Avenir-Black;
-    src: url(../fonts/Avenir-Black.ttf);
+	font-family: Avenir-Black;
+	src: url(../fonts/Avenir-Black.ttf);
 }
 @font-face {
-    font-family: Avenir-Roman;
-    src: url(../fonts/Avenir-Roman.ttf);
+	font-family: Avenir-Roman;
+	src: url(../fonts/Avenir-Roman.ttf);
 }
 @font-face {
-    font-family: Avenir-Oblique;
-    src: url(../fonts/Avenir-Oblique.ttf);
-    font-style: italic;
+	font-family: Avenir-Oblique;
+	src: url(../fonts/Avenir-Oblique.ttf);
+	font-style: italic;
 }
 $avenir-book: Avenir-Book, sans-serif;
 $avenir-light: Avenir-Light, sans-serif;
@@ -86,6 +86,14 @@ body {
 	font-family: $avenir-book;
 	-webkit-font-smoothing: antialiased;
 	color: #000;
+}
+
+.active-color {
+	background: #404043 !important;
+	color: #fff !important;
+	.text-top {
+		color: #fff !important;
+	}
 }
 
 .sticky-stuck {
@@ -130,11 +138,11 @@ div#page-wrap {
 	cursor: pointer;
 	transition: $custom-transition;
 	> div > img, > div > span {
-    vertical-align: -webkit-baseline-middle;
-    height: 20px;
-    float: left;
-    margin-left: 15px;
-    color: #fff;
+		vertical-align: -webkit-baseline-middle;
+		height: 20px;
+		float: left;
+		margin-left: 15px;
+		color: #fff;
 		transition: $custom-transition;
 	}
 	> div > span {
@@ -143,35 +151,35 @@ div#page-wrap {
 		transition: $custom-transition;
 	}
 	> .shopping-bag {
-    width: 42px;
-    overflow: hidden;
+		width: 42px;
+		overflow: hidden;
 		transition: $custom-transition;
 	}
 	> .email-img  {
 		width: 42px;
-    overflow: hidden;
+		overflow: hidden;
 		transition: $custom-transition;
 	}
 	> .burger-menu {
 		width: 45px;
-    overflow: hidden;
+		overflow: hidden;
 		transition: $custom-transition;
 	}
 	>.search-img {
 		width: 45px;
-    overflow: hidden;
+		overflow: hidden;
 		transition: $custom-transition;
 	}
 	@media screen and ( min-width: 420px ) {
 		height: 26px;
 		> div > img, > div > span {
-	    height: 26px;
+			height: 26px;
 		}
 		> div > span {
 			font-size: 15px;
 		}
 		> .shopping-bag {
-	    width: 47px;
+			width: 47px;
 		}
 		> .email-img  {
 			width: 47px;
@@ -186,13 +194,13 @@ div#page-wrap {
 	@media screen and ( min-width: 640px ) {
 		height: 28px;
 		> div > img, > div > span {
-	    height: 26px;
+			height: 26px;
 		}
 		> div > span {
 			font-size: 20px;
 		}
 		> .shopping-bag {
-	    width: 48px;
+			width: 48px;
 		}
 		> .email-img  {
 			width: 55px;
@@ -205,7 +213,7 @@ div#page-wrap {
 		}
 		&:hover {
 			> .email-img {
-		    width: 190px;
+				width: 190px;
 			}
 			> .shopping-bag {
 				width: 155px;
@@ -333,36 +341,36 @@ div#page-wrap {
 				transition: $custom-transition;
 				input {
 					background: transparent;
-			    border: none;
-			    color: #fff;
-			    box-shadow: none;
-			    font-family: $avenir-light;
-			    font-size: 18px;
-			    height: 45px;
+					border: none;
+					color: #fff;
+					box-shadow: none;
+					font-family: $avenir-light;
+					font-size: 18px;
+					height: 45px;
 					transition: $custom-transition;
-			    &::placeholder {
-			    	color: #fff;
-			    	font-style: italic;
+					&::placeholder {
+						color: #fff;
+						font-style: italic;
 						transition: $custom-transition;
-			    }
+					}
 				}
 				span {
 					background: transparent;
-			    border: none;
-			    color: #fff;
+					border: none;
+					color: #fff;
 					transition: $custom-transition;
-			    button {
-			    	background: transparent;
-			    	height: 20px;
-			    	width: 20px;
-			    	border: none;
-			    	box-shadow: none;
+					button {
+						background: transparent;
+						height: 20px;
+						width: 20px;
+						border: none;
+						box-shadow: none;
 						transition: $custom-transition;
-			    	span {
-			    		font-size: 20px;
+						span {
+							font-size: 20px;
 							transition: $custom-transition;
-			    	}
-			    }
+						}
+					}
 				}
 			}
 		}
@@ -371,17 +379,17 @@ div#page-wrap {
 				.input-group {
 					border-bottom: 3px solid #fff;
 					input {
-				    font-size: 25px;
-				    height: 55px;
+						font-size: 25px;
+						height: 55px;
 					}
 					span {
-				    button {
-				    	height: 30px;
-				    	width: 30px;
-				    	span {
-				    		font-size: 25px;
-				    	}
-				    }
+						button {
+							height: 30px;
+							width: 30px;
+							span {
+								font-size: 25px;
+							}
+						}
 					}
 				}
 			}
@@ -391,17 +399,17 @@ div#page-wrap {
 				.input-group {
 					border-bottom: 3px solid #fff;
 					input {
-				    font-size: 35px;
-				    height: 60px;
+						font-size: 35px;
+						height: 60px;
 					}
 					span {
-				    button {
-				    	height: 60px;
-				    	width: 60px;
-				    	span {
-				    		font-size: 35px;
-				    	}
-				    }
+						button {
+							height: 60px;
+							width: 60px;
+							span {
+								font-size: 35px;
+							}
+						}
 					}
 				}
 			}
@@ -411,17 +419,17 @@ div#page-wrap {
 				.input-group {
 					border-bottom: 4px solid #fff;
 					input {
-				    font-size: 45px;
-				    height: 80px;
+						font-size: 45px;
+						height: 80px;
 					}
 					span {
-				    button {
-				    	height: 80px;
-				    	width: 80px;
-				    	span {
-				    		font-size: 45px;
-				    	}
-				    }
+						button {
+							height: 80px;
+							width: 80px;
+							span {
+								font-size: 45px;
+							}
+						}
 					}
 				}
 			}
@@ -431,17 +439,17 @@ div#page-wrap {
 				.input-group {
 					border-bottom: 4px solid #fff;
 					input {
-				    font-size: 55px;
-				    height: 90px;
+						font-size: 55px;
+						height: 90px;
 					}
 					span {
-				    button {
-				    	height: 90px;
-				    	width: 90px;
-				    	span {
-				    		font-size: 55px;
-				    	}
-				    }
+						button {
+							height: 90px;
+							width: 90px;
+							span {
+								font-size: 55px;
+							}
+						}
 					}
 				}
 			}
@@ -451,17 +459,17 @@ div#page-wrap {
 				.input-group {
 					border-bottom: 4px solid #fff;
 					input {
-				    font-size: 55px;
-				    height: 90px;
+						font-size: 55px;
+						height: 90px;
 					}
 					span {
-				    button {
-				    	height: 90px;
-				    	width: 90px;
-				    	span {
-				    		font-size: 55px;
-				    	}
-				    }
+						button {
+							height: 90px;
+							width: 90px;
+							span {
+								font-size: 55px;
+							}
+						}
 					}
 				}
 			}
@@ -471,17 +479,17 @@ div#page-wrap {
 				.input-group {
 					border-bottom: 4px solid #fff;
 					input {
-				    font-size: 55px;
-				    height: 90px;
+						font-size: 55px;
+						height: 90px;
 					}
 					span {
-				    button {
-				    	height: 90px;
-				    	width: 90px;
-				    	span {
-				    		font-size: 55px;
-				    	}
-				    }
+						button {
+							height: 90px;
+							width: 90px;
+							span {
+								font-size: 55px;
+							}
+						}
 					}
 				}
 			}
@@ -539,10 +547,10 @@ div#page-wrap {
 				}
 				span {
 					background: transparent;
-			    border: none;
-			    color: #fff;
-			    width: 0;
-			    padding: 0;
+					border: none;
+					color: #fff;
+					width: 0;
+					padding: 0;
 					transition: $custom-transition;
 					button {
 						background: transparent;
@@ -731,14 +739,15 @@ div#page-wrap {
 
 /* MENU MODAL */
 div#menuModal {
-	padding-top: 25px;
+	margin: 15px;
+	padding: 15px 0 0 !important;
 	.menu-dialog {
 		margin: 0;
 		padding: 0;
 		width: 100%;
 		height: 100%;
 		.menu-header {
-			padding: 15px 30px 15px 15px;
+			padding: 15px;
 			border: none;
 			a.close-exit {
 				position: relative;
@@ -765,13 +774,13 @@ div#menuModal {
 
 /* VIDEO MODAL */
 .modal-video-wrap {
-		display: inline-block;
-		position: absolute;
-		top: 63%;
-		left: 50%;
-		width: 80%;
-		vertical-align: middle;
-		transform: translate(-50%,-50%);
+	display: inline-block;
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	width: 80%;
+	height: 15%;
+	transform: translate(-50%,-50%);
 	div.video-modal-link {
 		i {
 			color: #fff;
@@ -799,14 +808,15 @@ div#menuModal {
 	}
 }
 div#videoModal {
-	padding: 25px 15px 15px;
+	margin: 15px;
+	padding: 15px 0 0 !important;
 	.video-dialog {
 		margin: 0;
 		padding: 0;
 		width: 100%;
 		height: 100%;
 		.header-video {
-			padding: 15px 30px 15px 15px;
+			padding: 15px;
 			border: none;
 			a.close-exit {
 				position: relative;
@@ -853,6 +863,7 @@ div#videoModal {
 			a {
 				&.active-color {
 					background: #404043;
+					color: #fff;
 					.text-top {
 						color: #fff;
 					}
@@ -919,13 +930,13 @@ div#videoModal {
 				}
 				ul.sub-menu {
 					li {
-					 	height: 51px;
-					 	opacity: 1;
-					 	a{
-					 		padding: 15px 0 15px 15px;
-					 		color: #fff;
-					 	}
-				 	}
+						height: 51px;
+						opacity: 1;
+						a{
+							padding: 15px 0 15px 15px;
+							color: #fff;
+						}
+					}
 				}
 			}
 		}
@@ -943,10 +954,18 @@ div#videoModal {
 				font-family: $avenir-medium;
 				color: #404043;
 				height: 51px;
-				padding-top: 16px;
 				display: inline-block;
 				width: 100%;
+				padding: 0;
 				border-radius: 0;
+			}
+			.panel-body {
+				padding: 0;
+			}
+			a {
+				padding: 15px;
+    				display: inline-block;
+    				width: 100%;
 			}
 		}
 	}
@@ -1011,17 +1030,21 @@ div#videoModal {
 section {
 	background-size: cover !important;
 	background-repeat: no-repeat !important;
+	background-position: center !important;
 	color: #000;
 }
 
 #above-fold {
 	position: relative;
+	z-index: 0;
 	transition: $custom-transition;
 	.col-xs-12.video-wrap {
-		position: absolute;
+		position: relative;
 		overflow: hidden;
-		width: 100%;
-		height: 100%;
+		min-width: 100%;
+		min-height: 100%;
+		background-position: center;
+		background-size: cover;
 		transition: $custom-transition;
 		video {
 			position: absolute;
@@ -1029,6 +1052,7 @@ section {
 			right: 0;
 			bottom: 0;
 			left: 0;
+			min-width: 100%;
 			z-index: -2;
 			transition: $custom-transition;
 		}
@@ -1047,16 +1071,16 @@ section {
 	.info-wrap {
 		display: inline-block;
 		position: absolute;
-		top: 45%;
+		top: 50%;
 		left: 50%;
 		min-width: 50%;
-		height: 40%;
 		color: #fff;
 		transform: translate(-50%, -50%);
 		transition: $custom-transition;
 		.title {
 			font-family: $avenir-light;
 			font-size: 22px;
+			margin: auto;
 			letter-spacing: 1px;
 			text-align: center;
 			width: 290px;
@@ -1072,13 +1096,13 @@ section {
 			position: relative;
 			font-family: $avenir-light;
 			text-align: center;
-			font-size: 14px;
+			font-size: 18px;
 			padding-top: 15px;
 			transition: $custom-transition;
 			a {
 				position: relative;
 				display: inline-block;
-				height: 18px;
+				height: 22px;
 				color: #fff;
 				transition: $custom-transition;
 				.text-slide {
@@ -1338,6 +1362,19 @@ section {
 			}
 		}
 	}
+	.tag-title {
+		display: inline-block;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+		h1 {
+			font-family: $avenir-black;
+			font-size: 32px;
+		}
+	}
 }
 
 #page-footer {
@@ -1349,4 +1386,3 @@ section {
 	height: $footer-height;
 }
 /* end page setup */
-
