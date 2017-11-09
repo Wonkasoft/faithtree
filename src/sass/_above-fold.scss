@@ -327,7 +327,7 @@ div#page-wrap {
 	.search-container {
 		position: absolute;
 		display: inline-block;
-		padding: 8%;
+		padding: 0;
 		margin: 0;
 		top: 50%;
 		left: 50%;
@@ -1183,18 +1183,18 @@ section {
 					&:after {
 						border-bottom: 3px solid #fff;
 					}
-				}
-				&:hover {
-					.text-top {
-						bottom: 10px;
-						opacity: 0;
-					}
-					.text-bottom {
-						bottom: 45px;
-						opacity: 1;
-					}
-					&:after {
-						border-bottom: 7px solid #fff;
+					&:hover {
+						.text-top {
+							bottom: 10px;
+							opacity: 0;
+						}
+						.text-bottom {
+							bottom: 45px;
+							opacity: 1;
+						}
+						&:after {
+							border-bottom: 7px solid #fff;
+						}
 					}
 				}
 			}
@@ -1372,7 +1372,16 @@ section {
 		transform: translate(-50%, -50%);
 		h1 {
 			font-family: $avenir-black;
-			font-size: 32px;
+			font-size: 40px;
+			@media screen and ( min-width: 640px ) {
+				font-size: 50px;
+			}
+			@media screen and ( min-width: 768px ) {
+				font-size: 55px;
+			}
+			@media screen and ( min-width: 992px ) {
+				font-size: 60px;
+			}
 		}
 	}
 }
@@ -1383,6 +1392,6 @@ section {
 	clear: both;
 	width: 100%;
 	bottom: 0;
-	height: $footer-height;
+	min-height: $footer-height;
 }
 /* end page setup */

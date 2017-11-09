@@ -2,11 +2,9 @@ var wh = window.innerHeight,
 ww = window.innerWidth,
 mast = document.querySelector( '#masthead' ),
 main = document.getElementById('main'),
-sub_menu1 = document.getElementById('sub-menu-1'),
 sections = document.querySelectorAll('.home #main>section'),
 section_id = [],
 section_offsets = [],
-menu_offset = document.querySelector( '.sub-menu-cols' ).offsetTop,
 current_section = sections[0],
 page_footer = '',
 currentY = '',
@@ -15,15 +13,23 @@ distance = 10,
 speed = 8,
 scroll_live = true;
 
+set_section_heights();
+if ( document.getElementById( 'sub-menu-1' ) ) {
+		set_bottom_menu();
+		var sub_menu1 = document.getElementById('sub-menu-1'),
+		sub_menu_cols = document.querySelectorAll( '.sub-menu-cols' ),
+		sub_menu_cols1 = sub_menu_cols[0].offsetTop,
+		sub_menu_cols2 = sub_menu_cols[1].offsetTop;
+}
+
 window.onload = function () {
 	set_section_heights();
+	// adjustment of footer for sub-menu
 	if ( document.getElementById( 'sub-menu-1' ) ) {
 		set_bottom_menu();
-		/*setTimeout( function () {
-					scroller_coster( current_section.id );
-				}, 2000);*/
+		sub_menu_cols1 = sub_menu_cols[0].offsetTop;
+		sub_menu_cols2 = sub_menu_cols[1].offsetTop;
 	}
-	// adjustment of footer for sub-menu
 	if ( document.getElementsByClassName( 'cta' ) ) {
 		set_cta();
 	}
@@ -31,10 +37,12 @@ window.onload = function () {
 
 window.onresize = function () {
 	set_section_heights();
+	// adjustment of footer for sub-menu
 	if ( document.getElementById( 'sub-menu-1' ) ) {
 		set_bottom_menu();
+		sub_menu_cols1 = sub_menu_cols[0].offsetTop;
+		sub_menu_cols2 = sub_menu_cols[1].offsetTop;
 	}
-	// adjustment of footer for sub-menu
 };
 
 // triggered events from scrolling the page
@@ -143,17 +151,37 @@ if ( document.getElementsByTagName( 'body' )[0].classList.contains( 'home' )  ) 
 				}
 			}	
 		}
-		if ( sub_menu1 ) {
-			var last_offset = section_offsets[section_offsets.length - 1];
-			var calculated = last_offset + menu_offset - section_offsets.length * 10;
 
-			var sub_stop = true;
-			if ( currentY > last_offset) {
-				document.querySelector( '.sub-menu-cols' ).style.position = 'relative';
-				document.querySelector( '.sub-menu-cols' ).style.top = calculated + 'px';
-			} else if (currentY < last_offset) {
-				document.querySelector( '.sub-menu-cols' ).style.position = 'fixed';
-				document.querySelector( '.sub-menu-cols' ).style.top = '';
+		if ( sub_menu1 ) {
+			var section_length = sections.length;
+			section_length = section_length - 1;
+			var last_offset = section_offsets[section_length];
+			section_length = section_length * 10;
+			var calculated1 = last_offset + sub_menu_cols1 - section_length;
+			var calculated2 = last_offset + sub_menu_cols2 - section_length;
+			// console.log(last_offset + ' is last offset ');
+			// console.log(window.innerHeight + ' is the window Height');
+			// console.log(calculated1 + ' is calculated1');
+			// console.log(calculated2 + ' is calculated2');
+			if (sub_menu_cols[0]) {
+				if ( currentY > last_offset) {
+					sub_menu_cols[0].style.position = 'relative';
+					sub_menu_cols[0].style.top = calculated1 + 'px';
+				} else if (currentY < last_offset) {
+					sub_menu_cols[0].style.position = 'fixed';
+					sub_menu_cols[0].style.top = '';
+				}
+			}
+			if (sub_menu_cols[1]) {
+				if ( currentY > last_offset) {
+					sub_menu_cols[1].style.position = 'relative';
+					sub_menu_cols[1].style.top = calculated2 + 'px';
+					sub_menu_cols[1].style.padding = 0;
+				} else if (currentY < last_offset) {
+					sub_menu_cols[1].style.position = 'fixed';
+					sub_menu_cols[1].style.top = '';
+					sub_menu_cols[1].style.padding = '0 15px';
+				}
 			}
 		}
 	};
@@ -237,9 +265,8 @@ function set_bottom_menu() {
 	add_divs = '';
 
 	// adjustment of footer for sub-menu
-	document.getElementById('page-footer').style.height = '450px';
-	var foot_height = document.getElementById('page-footer').style.height;
-	document.getElementById('main').style.paddingBottom = foot_height;
+	var foot_height = document.getElementById('page-footer').clientHeight;
+	document.getElementById('main').style.paddingBottom = foot_height + 'px';
 
 	if ( !document.querySelector( '#sub-menu-1 .text-slide' ) ) {
 		// setting width of sub-menu items
