@@ -74,6 +74,8 @@ window.onscroll = function () {
 	top_menu_bg();
 };
 
+// Check for sub-menu
+if (document.getElementById('sub-menu-1')) {
 // onblur to colapse the accordian menu
 if (document.querySelector( '#mobile-menu-primary' )) {
 	document.querySelector( '#mobile-menu-primary' ).onblur = function () {
@@ -85,7 +87,6 @@ if (document.querySelector( '#mobile-menu-primary' )) {
 }
 
 // Sets the onclick scrolls on the home page
-if (document.getElementById('sub-menu-1')) {
 	var href_scroll = document.querySelectorAll( '.sub-menu-cols a' );
 	for (var i = 0; i < href_scroll.length; i++) {
 		if (href_scroll[i].getAttribute( 'href' ).charAt(0) == '#' && href_scroll[i].getAttribute( 'href' ) != '#mobile-sub-menu') {
