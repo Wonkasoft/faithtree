@@ -84,6 +84,7 @@ html, body {
 
 body {
 	font-family: $avenir-book;
+	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 	color: #000;
 }
@@ -96,7 +97,7 @@ body {
 	}
 }
 
-.sticky-stuck {
+body #page-wrap .sticky-stuck {
 	top: 0;
 	position: fixed;
 	background: rgba( #000, 0.4 );
@@ -243,21 +244,22 @@ div#page-wrap {
 			list-style-type: none;
 			padding: 0;
 			li {
-				width: 225px;
+				width: 250px;
 				margin-bottom: 10px;
 				transition: $custom-transition;
 				a {
 					color: #fff;
-					font-size: 20px;
+					font-size: 26px;
 					font-family: $avenir-heavy;
 					transition: $custom-transition;
 					&:before {
 						content: "our ";
 						display: inline-block;
-						font-size: 15px;
-						padding-right: 15px;
+						font-size: 24px;
+						padding-right: 10px;
 						font-family: $avenir-light;
 						font-style: italic;
+						text-transform: none;
 						transition: $custom-transition;
 					}
 				}
@@ -972,13 +974,6 @@ div#videoModal {
 }
 /* END MOBILE SUB-MENU */
 /* END SUB-MENU */
-.woocommerce-page {
-	#masthead {
-		position: relative;
-		background: rgba(#000, 0.4);
-	}
-}
-
 #page-wrap {
 	> #main {
 		position: relative;
@@ -1350,6 +1345,7 @@ section {
 		h1 {
 			font-family: $avenir-black;
 			font-size: 60px;
+			text-transform: uppercase;
 			transition: $custom-transition;
 			&:before {
 				content: "our ";
@@ -1358,6 +1354,7 @@ section {
 				padding-right: 15px;
 				font-family: $avenir-light;
 				font-style: italic;
+				text-transform: none;
 				transition: $custom-transition;
 			}
 		}
@@ -1381,6 +1378,24 @@ section {
 			}
 			@media screen and ( min-width: 992px ) {
 				font-size: 60px;
+			}
+		}
+	}
+}
+
+.single-product {
+	#under-header {
+		height: 80px;
+	}
+}
+
+.woocommerce-cart {
+	#under-header {
+		.page-title {
+			h1 {
+				&:before {
+					display: none;
+				}
 			}
 		}
 	}

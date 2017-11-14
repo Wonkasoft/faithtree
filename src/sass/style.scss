@@ -497,6 +497,7 @@ select[name="topic"]{
 .download-form {
 	background: #fff;
 	width: 100%;
+	font-weight: 300;
 	input.wpcf7-form-control {
 		width: 100%;
 		border: none;
@@ -507,6 +508,7 @@ select[name="topic"]{
 		border: none;
 		width: 100%;
     margin-bottom: 0;
+		font-weight: 300;
 		transition: $custom-transition;
 	}
 	p {
@@ -522,63 +524,112 @@ time.updated {
 	display: none;
 }
 
+.woocommerce .star-rating {
+	height: 3em;
+	width: 19em;
+	&:before {
+		color: #f4d317;
+		font-size: 34px;
+	}
+	span {
+		color: #f4d317;
+		font-size: 34px;
+	}
+} 
+
 .woocommerce button.button.alt {
-background: #000;
-   display: inline-block;
-   padding: 18px 5px;
-   min-width: 210px;
-   text-decoration: none;
-   color: #fff;
-   font-size: 15px;
-   transition: all .15s ease-in-out;
+	background: #000;
+	display: inline-block;
+	padding: 18px 5px;
+	min-width: 210px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 15px;
+	transition: all .15s ease-in-out;
 }
 
 .woocommerce a.button.alt {
-background:#000;
-color: #fff;
+	background:#000;
+	color: #fff;
 }
 
 .woocommerce input.button.alt {
-background: #000;
-color: #fff;
+	background: #000;
+	color: #fff;
 }
 
 .woocommerce input.button.alt:hover {
-background: #ccc;
-color: #fff;
+	background: #ccc;
+	color: #fff;
 }
 
 .woocommerce input.button.alt {
-background:#000;
-color:#fff;
+	background:#000;
+	color:#fff;
 }
 
 .woocommerce a.button.alt:hover {
-background:#ccc;
+	background:#ccc;
 }
 
 .woocommerce #payment #place_order, .woocommerce-page #payment #place_order {
-background:#000;
-color: #fff;
+	background:#000;
+	color: #fff;
 }
 
 .woocommerce #payment #place_order, .woocommerce-page #payment #place_order:hover {
-background: #000;
-color:#fff;
+	background: #000;
+	color:#fff;
 }
 
 .woocommerce div.product div.images img {
-width: 60%;
+	width: 60%;
 }
 
 .woocommerce div.product p.price, .woocommerce div.product span.price {
-font-size: 3em;
+	font-size: 3em;
 }
 
-.fl-rich-text a {
-   text-decoration: none;
-   font-weight: 300;
-   color: #000;
+.woocommerce ul.products {
+	margin-top: 15px;
+}
+
+.fl-col-content.fl-node-content {
+    font-weight: 300;
+}
+
+.fl-node-5a01ac7e15919 > .fl-module-content {
+	margin: 0;
+}
+
+.fl-node-5a01ac48e55ea {
+	height: 439.5px;
+}
+
+.fl-node-5a01acc7cd84a {
+	.fl-rich-text {
+		h2 {
+			font-family: $avenir-black;
+			padding: 0;
+		}
+		h3 {
+			padding: 0;
+		}
+	}
+}
+
+.fl-rich-text {
+	h2 {
+		padding: 15px;
+	}
+	h3 {
+		padding: 15px;
+	}
+	a {
+		text-decoration: none;
+		font-weight: 300;
+		color: #000;
+	}
 }
 
 .faithtree-btn {
@@ -605,15 +656,19 @@ font-size: 3em;
 	background: $footer-color;
 	color: #fff;
 	font-size: 14px;
+	font-weight: 300;
+	transition: $custom-transition;
 	> .row {
 		margin-bottom: 15px;
 		padding: 15px;
 		height: 55px;
+		transition: $custom-transition;
 		&:first-child {
 			height: 260px;
 			> div {
 				padding-top: calc(100vw / 50);
 				margin-bottom: 15px;
+				transition: $custom-transition;
 			}
 			.footer-email {
 				display: block;
@@ -623,22 +678,26 @@ font-size: 3em;
 				}
 				a {
 					color: #fff;
-					transition: all 0.2s ease-in-out;
+					transition: $custom-transition;
 				}
 			}
 			.social-links {
 				display: inline-block;
-				padding-left: 10px;
+				padding: 0 10px 0 0;
 				font-size: 32px;
 				float: none;
+				transition: $custom-transition;
 				a {
 					color: #fff;
+					transition: $custom-transition;
 				}
 				&:first-of-type {
 					clear: right;
+					transition: $custom-transition;
 				}
 				@media screen and ( min-width: 768px ) {
 					float: right;
+					padding: 0 0 0 10px;
 				}
 			}
 		}
