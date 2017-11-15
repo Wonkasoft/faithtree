@@ -1359,6 +1359,22 @@ section {
 			}
 		}
 	}
+	.product-page-title {
+		display: inline-block;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+		transition: $custom-transition;
+		h1 {
+			font-family: $avenir-black;
+			font-size: 60px;
+			text-transform: uppercase;
+			transition: $custom-transition;
+		}
+	}
 	.tag-title {
 		display: inline-block;
 		position: absolute;
@@ -1384,8 +1400,9 @@ section {
 }
 
 .single-product {
-	#under-header {
+	#product-header-bar {
 		height: 80px;
+		background: #d8d8d8;
 	}
 }
 

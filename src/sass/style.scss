@@ -524,9 +524,13 @@ time.updated {
 	display: none;
 }
 
+.woocommerce .products .star-rating {
+	margin: auto;
+}
+
 .woocommerce .star-rating {
 	height: 3em;
-	width: 19em;
+	width: 15.2em;
 	&:before {
 		color: #f4d317;
 		font-size: 34px;
@@ -535,7 +539,13 @@ time.updated {
 		color: #f4d317;
 		font-size: 34px;
 	}
-} 
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+	font-size: 18px;
+	text-align: center;
+	color: #000;
+}
 
 .woocommerce button.button.alt {
 	background: #000;

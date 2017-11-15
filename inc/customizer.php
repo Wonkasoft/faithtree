@@ -8,7 +8,7 @@
  * 
  */
 /**
- * Add postMessage support for site title and description for the Theme Customizer.
+ * Add refresh support for site title and description for the Theme Customizer.
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
@@ -18,11 +18,22 @@ function faithtree_customize_register( $wp_customize ) {
 	 * Theme Options 
 	 * @since  1.0.0 [Theme options for home page]
 	 */
+	$wp_customize->add_panel( 'ft_theme_options', array(
+ 	'priority'       => 28,
+  'capability'     => 'edit_theme_options',
+  'theme_supports' => '',
+  'title'          => __('Theme Options', 'mytheme'),
+  'description'    => __('Theme Settings', 'faithtree'),
+) );
 	
-	// Adding customizer section for Theme Options
-	$wp_customize->add_section( 'ft_theme_options' , array(
-		'title'		=> __( 'Theme Options', 'faithtree' ),
-		'priority'		=> 11,
+	// Adding customizer section for building sections Options
+	$wp_customize->add_section( 'section_options' , array(
+		'capability'     	=> 'edit_theme_options',
+		'theme_supports' 	=> '',
+		'priority'				=> 11,
+		'title'						=> __( 'Sections', 'faithtree' ),
+		'description'			=> __( 'How many sections?', 'faithtree' ),
+		'panel'  					=> 'ft_theme_options',
 	) );
 
 		// Section Options
@@ -37,7 +48,7 @@ function faithtree_customize_register( $wp_customize ) {
         'section_count',
         array(
             'label'          => __( 'How many sections', 'faithtree' ),
-            'section'        => 'ft_theme_options',
+            'section'        => 'section_options',
             'settings'       => 'section_count',
             'type'           => 'select',
             'choices'        => array(
@@ -56,7 +67,7 @@ function faithtree_customize_register( $wp_customize ) {
         )
     )
 );
-	
+
 	/**
  	* End of Theme Options
  	*/
@@ -88,6 +99,23 @@ function faithtree_customize_register( $wp_customize ) {
 		'section'    	=> 'main_header_section',
 		'setting'   	=> 'featured_header_media',
 		'description'	=> 'Choose an media for header section',
+	) ) );
+
+	// Mobile Main Header Image Setting
+	$wp_customize->add_setting( 'mobile_featured_header_image' , array(
+		'default'   => '',
+		'transport' => 'refresh',
+	) );
+
+	// Mobile Main Header Image Control
+	$wp_customize->add_control( new WP_Customize_Image_Control( 
+		$wp_customize, 
+		'mobile_featured_header_image', 
+		array(
+		'label'      	=> __( 'Featured Mobile Header Image ', 'faithtree' ),
+		'section'    	=> 'main_header_section',
+		'setting'   	=> 'mobile_featured_header_image',
+		'description'	=> 'Choose an image for mobile header section',
 	) ) );
 
 		// Main header Title Setting
@@ -161,6 +189,47 @@ function faithtree_customize_register( $wp_customize ) {
 		'type'			 	=> 'dropdown-pages',
 		'description'	=> 'Select the page for CTA',
 	) ) );
+
+		// Header YouTube or Vimeo for header modal Setting
+		$wp_customize->add_setting( 'header_video_platform', array(
+			'default'   => '',
+			'transport' => 'refresh',
+		) );
+
+		// Header YouTube or Vimeo for header modal Control
+		$wp_customize->add_control( new WP_Customize_Control( 
+			$wp_customize, 
+			'header_video_platform', 
+			array(
+			'label'      	=> __( 'Video Platform for Modal', 'faithtree' ),
+			'section'    	=> 'main_header_section',
+			'setting'   	=> 'header_video_platform',
+			'type'        => 'select',
+            'choices'       => array(
+                ''   				=> __( 'None' ),
+                'youtube'   => __( 'YouTube' ),
+                'vimeo'   	=> __( 'Vimeo' ),
+            ),
+			'description'	=> 'Choose YouTube or Vimeo for Popup Video',
+		) ) );
+
+	// Main header Modal video link Setting
+	$wp_customize->add_setting( 'modal_video_link' , array(
+		'default'   => '',
+		'transport' => 'refresh',
+	) );
+
+		// Main header CTA (Call To Action) Control
+	$wp_customize->add_control( new WP_Customize_Control( 
+		$wp_customize, 
+		'modal_video_link', 
+		array(
+		'label'      	=> __( 'Pop-up Video Link - Modal', 'faithtree' ),
+		'section'    	=> 'main_header_section',
+		'setting'   	=> 'modal_video_link',
+		'type'			 	=> 'text',
+		'description'	=> 'Pop-up video link (modal)',
+	) ) );
 	
 	/**
 	 * End of Main Header Section
@@ -184,7 +253,7 @@ function faithtree_customize_register( $wp_customize ) {
 		// Section Image Setting
 		$wp_customize->add_setting( 'background_image_section_'.$i , array(
 			'default'   => '',
-			'transport' => 'postMessage',
+			'transport' => 'refresh',
 		) );
 
 		// Section Image Control
@@ -198,27 +267,45 @@ function faithtree_customize_register( $wp_customize ) {
 			'description'	=> 'Choose a background image for section '.$i,
 		) ) );
 
-			// Section Title Image Setting
+			// Section Title Setting
 		$wp_customize->add_setting( 'section_title_'.$i , array(
 			'default'   => '',
-			'transport' => 'postMessage',
+			'transport' => 'refresh',
 		) );
 
 			// Section Title Control
-		$wp_customize->add_control( new WP_Customize_Image_Control( 
+		$wp_customize->add_control( new WP_Customize_Control( 
 			$wp_customize, 
 			'section_title_'.$i, 
 			array(
 			'label'      	=> __( 'Title Image For Section '.$i, 'faithtree' ),
 			'section'    	=> 'section_'.$i,
-			'setting'   	=> 'section_title'.$i,
+			'setting'   	=> 'section_title_'.$i,
+			'type'        => 'text',
+			'description'	=> 'Select a title for section '.$i,
+		) ) );
+
+		// Section Title Image Setting
+		$wp_customize->add_setting( 'section_title_image_'.$i , array(
+			'default'   => '',
+			'transport' => 'refresh',
+		) );
+
+			// Section Title Image Control
+		$wp_customize->add_control( new WP_Customize_Image_Control( 
+			$wp_customize, 
+			'section_title_image_'.$i, 
+			array(
+			'label'      	=> __( 'Title Image For Section '.$i, 'faithtree' ),
+			'section'    	=> 'section_'.$i,
+			'setting'   	=> 'section_title_image_'.$i,
 			'description'	=> 'Select a title image for section '.$i,
 		) ) );
 
 			// Section position for message Setting
 		$wp_customize->add_setting( 'section_message_position_'.$i , array(
 			'default'   => '',
-			'transport' => 'postMessage',
+			'transport' => 'refresh',
 		) );
 
 			// Section position Control
@@ -231,10 +318,9 @@ function faithtree_customize_register( $wp_customize ) {
 			'setting'   	=> 'section_message_position_'.$i,
 			'type'        => 'select',
             'choices'        => array(
-                ''   			=> __( 'None' ),
-                'left'   	=> __( 'Left' ),
-                'center'  => __( 'Center' ),
-                'right'   => __( 'Right' ),
+                ''   					 => __( 'Left' ),
+                'text-center'  => __( 'Center' ),
+                'text-right'   => __( 'Right' ),
             ),
 			'description'	=> 'Select position for message on section '.$i,
 		) ) );
@@ -242,7 +328,7 @@ function faithtree_customize_register( $wp_customize ) {
 			// Section Message Setting
 		$wp_customize->add_setting( 'section_message_'.$i , array(
 			'default'   => '',
-			'transport' => 'postMessage',
+			'transport' => 'refresh',
 		) );
 
 			// Section Message Control
@@ -260,7 +346,7 @@ function faithtree_customize_register( $wp_customize ) {
 				// Section position for cta Setting
 		$wp_customize->add_setting( 'section_cta_position_'.$i , array(
 			'default'   => '',
-			'transport' => 'postMessage',
+			'transport' => 'refresh',
 		) );
 
 			// Section position cta Control
@@ -273,10 +359,9 @@ function faithtree_customize_register( $wp_customize ) {
 			'setting'   	=> 'section_cta_position_'.$i,
 			'type'        => 'select',
             'choices'        => array(
-                ''   			=> __( 'None' ),
-                'left'   	=> __( 'Left' ),
-                'center'  => __( 'Center' ),
-                'right'   => __( 'Right' ),
+                ''   					 => __( 'Left' ),
+                'text-center'  => __( 'Center' ),
+                'text-right'   => __( 'Right' ),
             ),
 			'description'	=> 'Select position for CTA on section '.$i,
 		) ) );
@@ -284,7 +369,7 @@ function faithtree_customize_register( $wp_customize ) {
 			// Section CTA (Call To Action) Setting
 		$wp_customize->add_setting( 'section_cta_text_'.$i , array(
 			'default'   => '',
-			'transport' => 'postMessage',
+			'transport' => 'refresh',
 		) );
 
 			// Section CTA (Call To Action) Control
@@ -302,7 +387,7 @@ function faithtree_customize_register( $wp_customize ) {
 			// Section CTA (Call To Action) Link
 		$wp_customize->add_setting( 'section_cta_link_'.$i , array(
 			'default'   => '',
-			'transport' => 'postMessage',
+			'transport' => 'refresh',
 		) );
 
 			// Section CTA (Call To Action) Link Control
@@ -481,43 +566,10 @@ $wp_customize->add_section( 'footer_section' , array(
  * End of Footer Section
  */
 
-/**
- *
- * Add Facebook App ID Section
- * @since 1.0.0 [<Add About Me Section>]
- * 
- */
 
-$wp_customize->add_section( 'fb_app_section' , array(
-	'title'				=> __( 'Facebook App Section', 'faithtree' ),
-	'priority'		=> 37,
-) );
-
-// Footer Socials Instagram Setting
-	$wp_customize->add_setting( 'fb_app_setting' , array(
-		'default'   => '',
-		'transport' => 'refresh',
-	) );
-
-	// Footer Socials Instagram Control
-	$wp_customize->add_control( new WP_Customize_Control( 
-		$wp_customize, 
-		'fb_app_setting', 
-		array(
-		'label'      	=> __( 'Footer Social Instagram', 'faithtree' ),
-		'section'    	=> 'fb_app_section',
-		'setting'   	=> 'fb_app_setting',
-		'type'				=> 'text',
-		'description'	=> 'Add Fackbook App ID to intergrate Facebook',
-	) ) );
-
-/**
- * End of Facebook App ID Section
- */
-
-$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+$wp_customize->get_setting( 'blogname' )->transport         = 'refresh';
+$wp_customize->get_setting( 'blogdescription' )->transport  = 'refresh';
+$wp_customize->get_setting( 'header_textcolor' )->transport = 'refresh';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -553,4 +605,5 @@ function faithtree_customize_partial_blogdescription() {
 function faithtree_customize_preview_js() {
 	wp_enqueue_script( 'faithtree-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20171012', true );
 }
+
 add_action( 'customize_preview_init', 'faithtree_customize_preview_js' );
