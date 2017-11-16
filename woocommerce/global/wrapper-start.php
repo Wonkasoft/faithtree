@@ -23,6 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 $template = get_option( 'template' );
 
 switch ( $template ) {
+	case 'faithtree':
+		echo '<section id="product-header-bar"></section><section id="container"><div id="content" role="main">';
+		break;
 	case 'twentyeleven' :
 		echo '<div id="primary"><div id="content" role="main" class="twentyeleven">';
 		break;
@@ -42,6 +45,6 @@ switch ( $template ) {
 		echo '<div id="primary" class="content-area twentysixteen"><main id="main" class="site-main" role="main">';
 		break;
 	default :
-		echo '<div id="container"><div id="content" role="main">';
+		echo '<section id="container"><div id="content" role="main">';
 		break;
 }

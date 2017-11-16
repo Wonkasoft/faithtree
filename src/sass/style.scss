@@ -524,6 +524,33 @@ time.updated {
 	display: none;
 }
 
+.custom_comment_container.woocommerce {
+	.star-rating {
+		float: left;
+		margin-left: 15px;
+		height: 3em;
+		width: 15.2em;
+		&:before {
+			color: #f4d317;
+			font-size: 34px;
+		}
+		span {
+			color: #f4d317;
+			font-size: 34px;
+		}
+	}
+	.comment-text {
+		clear: both;
+		p {
+			margin-bottom: 0;
+		}
+		p:first-child {
+			font-size: 24px;
+			font-weight: 700;
+		}
+	}
+}
+
 .woocommerce .products .star-rating {
 	margin: auto;
 }

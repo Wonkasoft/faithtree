@@ -23,6 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 $template = get_option( 'template' );
 
 switch ( $template ) {
+	case 'faithtree':
+		echo '</div></section>';
+		break;
 	case 'twentyeleven' :
 		echo '</div>';
 		get_sidebar( 'shop' );

@@ -21,23 +21,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
+<main id="main">
 
-	<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 * @hooked WC_Structured_Data::generate_website_data() - 30
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
-
-    <header class="woocommerce-products-header">
-
+		<section id="under-header" class="" style="background-image: url( <?php echo get_theme_mod( 'products_header_image' );?> );">
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+			<div class="product-page-title">
+				<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+			</div>
 
-			<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 
 		<?php endif; ?>
 
@@ -51,8 +42,18 @@ get_header( 'shop' ); ?>
 			do_action( 'woocommerce_archive_description' );
 		?>
 
-    </header>
+		</section> <!-- #under-header -->
 
+	<?php
+		/**
+		 * woocommerce_before_main_content hook.
+		 *
+		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+		 * @hooked woocommerce_breadcrumb - 20
+		 * @hooked WC_Structured_Data::generate_website_data() - 30
+		 */
+		do_action( 'woocommerce_before_main_content' );
+	?>
 		<?php if ( have_posts() ) : ?>
 
 			<?php
@@ -126,5 +127,5 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_sidebar' );
 	?>
-
+</main><!-- /#main -->
 <?php get_footer( 'shop' ); ?>
