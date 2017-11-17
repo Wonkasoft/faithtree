@@ -75,6 +75,7 @@ function custom_add_to_cart( $atts ) {
 		'id' => '99',
 		'class' => 'custom-cart-btn',
 		'value' => 'Add to Cart',
+		'to-cart' => false,
 		'cost' => false,
 	), $atts);
 
@@ -83,9 +84,8 @@ function custom_add_to_cart( $atts ) {
 	
 	?>
 	<div class="custom-cart-btn-wrap btn-for-<?php echo $atts['id']; ?>">
-	<?php	echo sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="%s">%s%s</a>',
-			  esc_url( $current_product->add_to_cart_url() ),
-			  esc_attr( isset( $quantity ) ? $quantity : 1 ),
+	<?php	echo sprintf( '<a rel="nofollow" href="%s" data-product_id="%s" data-product_sku="%s" class="%s">%s%s</a>',
+			  ( $atts['to-cart'] ) ? '/cart/?add-to-cart=' . $atts['id']: esc_url( $current_product->add_to_cart_url() ),
 			  esc_attr( $current_product->get_id() ),
 			  esc_attr( $current_product->get_sku() ),
 			  esc_attr( isset( $atts['class'] ) ? $atts['class']: 'custom-cart-btn' ),

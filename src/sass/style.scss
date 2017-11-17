@@ -6,7 +6,7 @@
 
 /* SECTIONS */
 .home {
-	section:not(:nth-child(4)) {
+	section:not( :nth-child(4) ) {
 		line-height: 1;
 		padding: 25px 0;
 		position: relative;
@@ -67,7 +67,7 @@
 			vertical-align: middle;
 			transform: translate(-50%, -50%);
 		}
-		@media screen and ( min-width: 420px ) {
+		@media screen and ( min-width: 410px ) {
 			.title {
 				font-size: 30px;
 			}
@@ -420,7 +420,7 @@ select[name="topic"]{
 			}	
 		}
 	}
-	@media screen and ( min-width: 420px ) {
+	@media screen and ( min-width: 410px ) {
 		> div.container-fluid {
 			> .row {
 				.blog-overlay {
@@ -512,16 +512,21 @@ select[name="topic"]{
 		transition: $custom-transition;
 	}
 	p {
-    margin: 0;
-    padding: 20px 15px 0;
-    strong {
-    	color: #000;
-    }
+		margin: 0;
+		padding: 20px 15px 0;
+		strong {
+			color: #000;
+		}
 	}
 }
 
 time.updated {
 	display: none;
+}
+
+a.woocommerce-review-link {
+    clear: both;
+    float: left;
 }
 
 .custom_comment_container.woocommerce {
@@ -739,7 +744,7 @@ time.updated {
 			}
 		}
 	}
-	@media screen and ( min-width: 420px ) {
+	@media screen and ( min-width: 410px ) {
 		font-size: 18px;
 	}
 	@media screen and ( min-width: 640px ) {

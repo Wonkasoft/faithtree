@@ -19,7 +19,7 @@ page_footer = '',
 currentY = '',
 scrollY = 0,
 distance = 10,
-speed = 8,
+speed = 5,
 auto_scroll = '',
 is_mobile = false;
 
@@ -44,16 +44,24 @@ if ( document.getElementById( 'workbook-quantity' ) ) {
 
 	var sel = document.getElementById( 'workbook-quantity' );
 	var sel_option = sel.options[sel.selectedIndex].text;
+	var get_product_price = document.querySelector( '.btn-for-220 > a > span' ).childNodes[1].nodeValue;
+	var get_product = document.querySelector( '.btn-for-220 > a' ).getAttribute( 'data-product_id');
+	var add_url = '/cart/?add-to-cart=' + get_product;
 	set_button_quantity();
 
-	sel.onchange = function() {set_button_quantity()}, { passive: true };
+	sel.onchange = function() {set_button_quantity();};
 
-	function set_button_quantity() {
+}
 
-		sel_option = sel.options[sel.selectedIndex].text;
-		document.querySelector( '.btn-for-220 > a' ).setAttribute( 'data-quantity', sel_option);
+	
+function set_button_quantity() {
 
-	}
+	sel_option = sel.options[sel.selectedIndex].text;
+	var set_price = parseFloat( Math.abs( get_product_price * sel_option ) ).toFixed(2);
+	set_url = add_url + '&quantity=' + sel_option;
+	document.querySelector( '.btn-for-220 > a > span' ).childNodes[1].nodeValue = set_price;
+	document.querySelector( '.btn-for-220 > a' ).setAttribute( 'href', set_url);
+	document.querySelector( '.btn-for-220 > a' ).setAttribute( 'data-quantity', sel_option);
 
 }
 
@@ -128,7 +136,7 @@ window.onresize = function () {
 window.onscroll = function () {
 
 	top_menu_bg();
-}, { passive: true};
+};
 
 // Check for sub-menu
 if (document.getElementById('sub-menu-1')) {
@@ -175,7 +183,7 @@ if ( document.querySelector( '#videoModal' ) ) {
 		document.querySelector( '.video-body iframe' ).setAttribute( 'src', '/' );
 		document.querySelector( '.video-body iframe' ).setAttribute( 'src', vid_src );
 
-	},{passive:true};
+	};
 	// exiting if statement
 }
 
@@ -237,22 +245,32 @@ if ( document.getElementsByTagName( 'body' )[0].classList.contains( 'home' )  ) 
 		top_menu_bg();
 		sub_stopper();
 
-		if ( is_mobile == false ) {
+		if ( is_mobile === false ) {
 
 			clearTimeout(auto_scroll);
-			auto_scroll = setTimeout( function () {
 
-				currentY = window.pageYOffset;
+			if ( window.pageYOffset + window.innerHeight + 1 >= document.getElementById( 'page-wrap' ).offsetHeight ) {
+			
+				// intended to skip scroll
 
-				if ( currentY != current_section.offsetTop ) {
+			} else {
 
-					scroller_coster(current_section.id);
+				auto_scroll = setTimeout( function () {
 
-				}
+					currentY = window.pageYOffset;
 
-				clearTimeout(auto_scroll);
+					if ( currentY != current_section.offsetTop ) {
 
-			}, 2000);
+						scroller_coster(current_section.id);
+
+					}
+
+					clearTimeout(auto_scroll);
+
+				}, 1500);
+				
+			}
+
 
     }
 

@@ -4,7 +4,7 @@
 
 /* MEDIA QUERIES */
 /*
-@media screen and ( min-width: 420px ) {
+@media screen and ( min-width: 410px ) {
 
 }
 @media screen and ( min-width: 640px ) {
@@ -171,7 +171,7 @@ div#page-wrap {
 		overflow: hidden;
 		transition: $custom-transition;
 	}
-	@media screen and ( min-width: 420px ) {
+	@media screen and ( min-width: 410px ) {
 		height: 26px;
 		> div > img, > div > span {
 			height: 26px;
@@ -263,7 +263,7 @@ div#page-wrap {
 						transition: $custom-transition;
 					}
 				}
-				@media screen and ( min-width: 420px ) {
+				@media screen and ( min-width: 410px ) {
 					width: 270px;
 					a {
 						font-size: 28px;
@@ -376,7 +376,7 @@ div#page-wrap {
 				}
 			}
 		}
-		@media screen and ( min-width: 420px ) {
+		@media screen and ( min-width: 410px ) {
 			.search-form {
 				.input-group {
 					border-bottom: 3px solid #fff;
@@ -569,7 +569,7 @@ div#page-wrap {
 				}
 			}
 		}
-		@media screen and ( min-width: 420px ) {
+		@media screen and ( min-width: 410px ) {
 			h1 {
 				font-size: 36px;
 				width: 360px;
@@ -756,6 +756,7 @@ div#menuModal {
 				display: block;
 				float: right;
 				width: 45px;
+				cursor: pointer;
 				z-index: 1500;
 			}
 		}
@@ -788,7 +789,7 @@ div#menuModal {
 			color: #fff;
 			font-size: 55px;
 			transition: $custom-transition;
-			@media screen and ( min-width: 420px ) {
+			@media screen and ( min-width: 410px ) {
 				font-size: 65px;
 			}
 			@media screen and ( min-width: 640px ) {
@@ -825,6 +826,7 @@ div#videoModal {
 				display: block;
 				float: right;
 				width: 45px;
+				cursor: pointer;
 				z-index: 1500;
 			}
 		}
@@ -1125,7 +1127,7 @@ section {
 				}
 			}
 		}
-		@media screen and ( min-width: 420px ) {
+		@media screen and ( min-width: 410px ) {
 			.title {
 				font-size: 30px;
 				width: 350px;
