@@ -1,6 +1,6 @@
 /**
- *  This file should have all styles for this page that are below the fold of the page.
- */
+*  This file should have all styles for this page that are below the fold of the page.
+*/
 @import 'above-fold.scss';
 
 
@@ -10,15 +10,24 @@
 		line-height: 1;
 		padding: 25px 0;
 		position: relative;
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 		.title {
 			font-family: $avenir-light;
 			padding-top: 8%;
 			font-size: 25px;
+			-webkit-transition: $custom-transition;
+			-moz-transition: $custom-transition;
+			-o-transition: $custom-transition;
 			transition: $custom-transition;
 		}
 		.title-image {
 			padding-top: 15px;
+			-webkit-transition: $custom-transition;
+			-moz-transition: $custom-transition;
+			-o-transition: $custom-transition;
 			transition: $custom-transition;
 		}
 		.cta {
@@ -26,16 +35,25 @@
 			text-decoration: underline;
 			font-size: 22px;
 			padding-top:15px;
+			-webkit-transition: $custom-transition;
+			-moz-transition: $custom-transition;
+			-o-transition: $custom-transition;
 			transition: $custom-transition;
 			a {
 				position: relative;
 				display: inline-block;
 				height: 32px;
 				color: #fff;
+				-webkit-transition: $custom-transition;
+				-moz-transition: $custom-transition;
+				-o-transition: $custom-transition;
 				transition: $custom-transition;
 				.text-slide {
 					position: relative;
 					height: 29px;
+					-webkit-transition: $custom-transition;
+					-moz-transition: $custom-transition;
+					-o-transition: $custom-transition;
 					transition: $custom-transition;
 				}
 				.text-top {
@@ -54,6 +72,9 @@
 					left: 0;
 					width: 100%;
 					border-bottom: 4px solid #fff;
+					-webkit-transition: $custom-transition;
+					-moz-transition: $custom-transition;
+					-o-transition: $custom-transition;
 					transition: $custom-transition;
 				}
 			}
@@ -65,7 +86,11 @@
 			left: 50%;
 			width: 80%;
 			vertical-align: middle;
-			transform: translate(-50%, -50%);
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			transition: $custom-transition;
 		}
 		@media screen and ( min-width: 420px ) {
 			.title {
@@ -214,6 +239,9 @@
 p {
 	font-size: 18px;
 	padding: 15px;
+	-webkit-transition: $custom-transition;
+	-moz-transition: $custom-transition;
+	-o-transition: $custom-transition;
 	transition: $custom-transition;
 }
 
@@ -222,24 +250,39 @@ p {
 /* SECTION CHRISTIAN LIVING */
 #section-1 {
 	color: #fff;
+	-webkit-transition: $custom-transition;
+	-moz-transition: $custom-transition;
+	-o-transition: $custom-transition;
 	transition: $custom-transition;
 	.title {
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 		.divider {
 			display: inline-block;
-  		top: 0;
-  		position: relative;
+			top: 0;
+			position: relative;
+			-webkit-transition: $custom-transition;
+			-moz-transition: $custom-transition;
+			-o-transition: $custom-transition;
 			transition: $custom-transition;
 		}
 		.text-italics {
 			font-family: $avenir-light;
 			font-style: italic;
+			-webkit-transition: $custom-transition;
+			-moz-transition: $custom-transition;
+			-o-transition: $custom-transition;
 			transition: $custom-transition;
 		}
 	}
 	.tag-line {
 		text-weight: bold;
 		letter-spacing: 15px;
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 		.highlight {
 			letter-spacing: 2px;
@@ -247,11 +290,17 @@ p {
 			padding: 8px;
 			background: #ffde16;
 			display: inline-block;
+			-webkit-transition: $custom-transition;
+			-moz-transition: $custom-transition;
+			-o-transition: $custom-transition;
 			transition: $custom-transition;
 		}
 	}
 	a {
 		color: #fff;
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 	}
 }
@@ -261,19 +310,34 @@ p {
 #section-2 {
 	color: #000;
 	font-weight: 800;
+	-webkit-transition: $custom-transition;
+	-moz-transition: $custom-transition;
+	-o-transition: $custom-transition;
 	transition: $custom-transition;
 	.title {
 		font-family: $avenir-light;
 		font-style: italic;
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 	}
 	.cta {
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 		a {
 			color: #000;
+			-webkit-transition: $custom-transition;
+			-moz-transition: $custom-transition;
+			-o-transition: $custom-transition;
 			transition: $custom-transition;
 			&:after {
 				border-color: #000;
+				-webkit-transition: $custom-transition;
+				-moz-transition: $custom-transition;
+				-o-transition: $custom-transition;
 				transition: $custom-transition;
 			}
 		}
@@ -283,16 +347,25 @@ p {
 
 /*DISABILITY & GOSPEL SECTION */
 #section-3 {
+	-webkit-transition: $custom-transition;
+	-moz-transition: $custom-transition;
+	-o-transition: $custom-transition;
 	transition: $custom-transition;
 	.title {
 		font-family: $avenir-light;
 		font-style: italic;
 		font-weight: 300;
 		color: #fff;
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 	}
 	a {
 		color: #fff;
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 	}
 }
@@ -307,11 +380,21 @@ p {
 		top: 50%;
 		left: 50%;
 		width: 100%;
-		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transition: $custom-transition;
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 		h1 {
 			font-family: $avenir-black;
 			font-size: 60px;
+			-webkit-transition: $custom-transition;
+			-moz-transition: $custom-transition;
+			-o-transition: $custom-transition;
 			transition: $custom-transition;
 			&:before {
 				content: "our ";
@@ -320,6 +403,9 @@ p {
 				padding-right: 15px;
 				font-family: $avenir-light;
 				font-style: italic;
+				-webkit-transition: $custom-transition;
+				-moz-transition: $custom-transition;
+				-o-transition: $custom-transition;
 				transition: $custom-transition;
 			}
 		}
@@ -328,11 +414,17 @@ p {
 
 #content-section {
 	color: #000;
+	-webkit-transition: $custom-transition;
+	-moz-transition: $custom-transition;
+	-o-transition: $custom-transition;
 	transition: $custom-transition;
 	.partner-img {
 		position: relative;
 		width: 100%;
 		height: 370px;
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 		.partner-img-wrap {
 			position: absolute;
@@ -340,19 +432,31 @@ p {
 			left: 50%;
 			bottom: -40%;
 			transform: translate(-50%,-50%);
+			-webkit-transition: $custom-transition;
+			-moz-transition: $custom-transition;
+			-o-transition: $custom-transition;
 			transition: $custom-transition;
 			> img {
 				position: relative;
 				display: inline-block;
 				margin: 30px;
+				-webkit-transition: $custom-transition;
+				-moz-transition: $custom-transition;
+				-o-transition: $custom-transition;
 				transition: $custom-transition;
 			}
 		}
 	}
 	.landing-content {
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 		.entry-content {
 			margin: auto -15px;
+			-webkit-transition: $custom-transition;
+			-moz-transition: $custom-transition;
+			-o-transition: $custom-transition;
 			transition: $custom-transition;
 		}
 	}
@@ -360,6 +464,9 @@ p {
 
 .blog-filter {
 	padding: 15px;
+	-webkit-transition: $custom-transition;
+	-moz-transition: $custom-transition;
+	-o-transition: $custom-transition;
 	transition: $custom-transition;
 }
 
@@ -372,28 +479,49 @@ select[name="topic"]{
 
 .blog-wrap {
 	position: relative;
+	-webkit-transition: $custom-transition;
+	-moz-transition: $custom-transition;
+	-o-transition: $custom-transition;
 	transition: $custom-transition;
 	> div.container-fluid {
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 		> .row {
 			height: 100%;
+			-webkit-transition: $custom-transition;
+			-moz-transition: $custom-transition;
+			-o-transition: $custom-transition;
 			transition: $custom-transition;
 			.blog-overlay {
 				position: relative;
 				height: 100%;
 				background: rgba(#fff, 0.4);
+				-webkit-transition: $custom-transition;
+				-moz-transition: $custom-transition;
+				-o-transition: $custom-transition;
 				transition: $custom-transition;
 				.info-wrap {
 					width: 100%;
 					padding: 30px 0;
 					margin: 0;
+					-webkit-transition: $custom-transition;
+					-moz-transition: $custom-transition;
+					-o-transition: $custom-transition;
 					transition: $custom-transition;
 					p {
 						padding: 0;
+						-webkit-transition: $custom-transition;
+						-moz-transition: $custom-transition;
+						-o-transition: $custom-transition;
 						transition: $custom-transition;
 					}
 					a {
 						color: #000;
+						-webkit-transition: $custom-transition;
+						-moz-transition: $custom-transition;
+						-o-transition: $custom-transition;
 						transition: $custom-transition;
 					}
 					article {
@@ -481,16 +609,16 @@ select[name="topic"]{
 		}
 	}
 	@media screen and ( min-width: 768px ) {
-	
+
 	}
 	@media screen and ( min-width: 992px ) {
-	
+
 	}
 	@media screen and ( min-width: 1200px ) {
-	
+
 	}
 	@media screen and ( min-width: 1366px ) {
-	
+
 	}
 }
 
@@ -507,16 +635,19 @@ select[name="topic"]{
 	input[type=submit] {
 		border: none;
 		width: 100%;
-    margin-bottom: 0;
+		margin-bottom: 0;
 		font-weight: 300;
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 	}
 	p {
-    margin: 0;
-    padding: 20px 15px 0;
-    strong {
-    	color: #000;
-    }
+		margin: 0;
+		padding: 20px 15px 0;
+		strong {
+			color: #000;
+		}
 	}
 }
 
@@ -632,7 +763,7 @@ time.updated {
 }
 
 .fl-col-content.fl-node-content {
-    font-weight: 300;
+	font-weight: 300;
 }
 
 .fl-node-5a01ac7e15919 > .fl-module-content {
@@ -678,6 +809,9 @@ time.updated {
 	color: #fff !important;
 	font-size: 15px;
 	text-align: center;
+	-webkit-transition: $custom-transition;
+	-moz-transition: $custom-transition;
+	-o-transition: $custom-transition;
 	transition: $custom-transition;
 	@media screen and ( min-width: 768px ) {
 		&:hover {
@@ -694,17 +828,26 @@ time.updated {
 	color: #fff;
 	font-size: 14px;
 	font-weight: 300;
+	-webkit-transition: $custom-transition;
+	-moz-transition: $custom-transition;
+	-o-transition: $custom-transition;
 	transition: $custom-transition;
 	> .row {
 		margin-bottom: 15px;
 		padding: 15px;
 		height: 55px;
+		-webkit-transition: $custom-transition;
+		-moz-transition: $custom-transition;
+		-o-transition: $custom-transition;
 		transition: $custom-transition;
 		&:first-child {
 			height: 260px;
 			> div {
 				padding-top: calc(100vw / 50);
 				margin-bottom: 15px;
+				-webkit-transition: $custom-transition;
+				-moz-transition: $custom-transition;
+				-o-transition: $custom-transition;
 				transition: $custom-transition;
 			}
 			.footer-email {
@@ -715,6 +858,9 @@ time.updated {
 				}
 				a {
 					color: #fff;
+					-webkit-transition: $custom-transition;
+					-moz-transition: $custom-transition;
+					-o-transition: $custom-transition;
 					transition: $custom-transition;
 				}
 			}
@@ -723,13 +869,22 @@ time.updated {
 				padding: 0 10px 0 0;
 				font-size: 32px;
 				float: none;
+				-webkit-transition: $custom-transition;
+				-moz-transition: $custom-transition;
+				-o-transition: $custom-transition;
 				transition: $custom-transition;
 				a {
 					color: #fff;
+					-webkit-transition: $custom-transition;
+					-moz-transition: $custom-transition;
+					-o-transition: $custom-transition;
 					transition: $custom-transition;
 				}
 				&:first-of-type {
 					clear: right;
+					-webkit-transition: $custom-transition;
+					-moz-transition: $custom-transition;
+					-o-transition: $custom-transition;
 					transition: $custom-transition;
 				}
 				@media screen and ( min-width: 768px ) {
