@@ -6,7 +6,7 @@
 
 /* SECTIONS */
 .home {
-	section:not(:nth-child(4)) {
+	section:not( :nth-child(4) ) {
 		line-height: 1;
 		padding: 25px 0;
 		position: relative;
@@ -92,7 +92,7 @@
 			-ms-transform: translate(-50%, -50%);
 			transition: $custom-transition;
 		}
-		@media screen and ( min-width: 420px ) {
+		@media screen and ( min-width: 410px ) {
 			.title {
 				font-size: 30px;
 			}
@@ -548,7 +548,7 @@ select[name="topic"]{
 			}	
 		}
 	}
-	@media screen and ( min-width: 420px ) {
+	@media screen and ( min-width: 410px ) {
 		> div.container-fluid {
 			> .row {
 				.blog-overlay {
@@ -653,6 +653,11 @@ select[name="topic"]{
 
 time.updated {
 	display: none;
+}
+
+a.woocommerce-review-link {
+    clear: both;
+    float: left;
 }
 
 .custom_comment_container.woocommerce {
@@ -894,7 +899,7 @@ time.updated {
 			}
 		}
 	}
-	@media screen and ( min-width: 420px ) {
+	@media screen and ( min-width: 410px ) {
 		font-size: 18px;
 	}
 	@media screen and ( min-width: 640px ) {

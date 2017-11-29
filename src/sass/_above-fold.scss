@@ -4,7 +4,7 @@
 
 /* MEDIA QUERIES */
 /*
-@media screen and ( min-width: 420px ) {
+@media screen and ( min-width: 410px ) {
 
 }
 @media screen and ( min-width: 640px ) {
@@ -198,7 +198,7 @@ div#page-wrap {
 		-o-transition: $custom-transition;
 		transition: $custom-transition;
 	}
-	@media screen and ( min-width: 420px ) {
+	@media screen and ( min-width: 410px ) {
 		height: 26px;
 		> div > img, > div > span {
 			height: 26px;
@@ -306,7 +306,7 @@ div#page-wrap {
 						transition: $custom-transition;
 					}
 				}
-				@media screen and ( min-width: 420px ) {
+				@media screen and ( min-width: 410px ) {
 					width: 270px;
 					a {
 						font-size: 28px;
@@ -378,10 +378,10 @@ div#page-wrap {
 		left: 50%;
 		width: 100%;
 		-webkit-transform: translate(-50%, -50%);
--moz-transform: translate(-50%, -50%);
--o-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%);
-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
 		-webkit-transition: $custom-transition;
 		-moz-transition: $custom-transition;
 		-o-transition: $custom-transition;
@@ -447,7 +447,7 @@ transform: translate(-50%, -50%);
 				}
 			}
 		}
-		@media screen and ( min-width: 420px ) {
+		@media screen and ( min-width: 410px ) {
 			.search-form {
 				.input-group {
 					border-bottom: 3px solid #fff;
@@ -674,7 +674,7 @@ transform: translate(-50%, -50%);
 				}
 			}
 		}
-		@media screen and ( min-width: 420px ) {
+		@media screen and ( min-width: 410px ) {
 			h1 {
 				font-size: 36px;
 				width: 360px;
@@ -861,6 +861,7 @@ div#menuModal {
 				display: block;
 				float: right;
 				width: 45px;
+				cursor: pointer;
 				z-index: 1500;
 			}
 		}
@@ -888,10 +889,10 @@ div#menuModal {
 	width: 80%;
 	height: 15%;
 	-webkit-transform: translate(-50%, -50%);
--moz-transform: translate(-50%, -50%);
--o-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%);
-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 	div.video-modal-link {
 		i {
 			color: #fff;
@@ -900,7 +901,7 @@ transform: translate(-50%, -50%);
 			-moz-transition: $custom-transition;
 			-o-transition: $custom-transition;
 			transition: $custom-transition;
-			@media screen and ( min-width: 420px ) {
+			@media screen and ( min-width: 410px ) {
 				font-size: 65px;
 			}
 			@media screen and ( min-width: 640px ) {
@@ -937,6 +938,7 @@ div#videoModal {
 				display: block;
 				float: right;
 				width: 45px;
+				cursor: pointer;
 				z-index: 1500;
 			}
 		}
@@ -1299,7 +1301,7 @@ section {
 				}
 			}
 		}
-		@media screen and ( min-width: 420px ) {
+		@media screen and ( min-width: 410px ) {
 			.title {
 				font-size: 30px;
 				width: 350px;
