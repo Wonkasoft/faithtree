@@ -23,13 +23,7 @@ speed = 5,
 auto_scroll = '',
 is_mobile = false;
 
-if ( ww <= 425 ) {
-	is_mobile = true;
-} else {
-	is_mobile = false;
-}
-
-if ( document.getElementById( 'sub-menu-1' ) ) {
+if ( document.getElementById( 'sub-menu-1' ).length ) {
 
 	set_mobile_sub_menu();
 	sub_menu_cols1 = sub_menu_cols[0];
@@ -40,7 +34,7 @@ if ( document.getElementById( 'sub-menu-1' ) ) {
 
 }
 
-if ( document.getElementById( 'workbook-quantity' ) ) {
+if ( document.getElementById( 'workbook-quantity' ).length ) {
 
 	var sel = document.getElementById( 'workbook-quantity' );
 	var sel_option = sel.options[sel.selectedIndex].text;
@@ -68,9 +62,10 @@ function set_button_quantity() {
 window.onload = function () {
 
 	set_section_heights();
+	mobile_checker();
 
 	// adjustment of footer for sub-menu
-	if ( document.getElementById( 'sub-menu-1' ) ) {
+	if ( document.getElementById( 'sub-menu-1' ).length ) {
 
 		sub_menu1 = document.getElementById('sub-menu-1');
 		set_bottom_menu();
@@ -90,7 +85,7 @@ window.onload = function () {
 		}
 	}
 
-	if ( document.getElementsByClassName( 'cta' ) ) {
+	if ( document.getElementsByClassName( 'cta' ).length ) {
 
 		set_cta();
 
@@ -112,7 +107,7 @@ window.onresize = function () {
 		set_section_heights();
 
 		// adjustment of footer for sub-menu
-		if ( document.getElementById( 'sub-menu-1' ) ) {
+		if ( document.getElementById( 'sub-menu-1' ).length ) {
 
 			set_bottom_menu();
 
@@ -139,10 +134,10 @@ window.onscroll = function () {
 };
 
 // Check for sub-menu
-if (document.getElementById('sub-menu-1')) {
+if ( document.getElementById('sub-menu-1').length ) {
 
 	// onblur to colapse the accordian menu
-	if (document.querySelector( '#mobile-menu-primary' )) {
+	if ( document.querySelector( '#mobile-menu-primary' ).length ) {
 
 		document.querySelector( '#mobile-menu-primary' ).onblur = function () {
 			setTimeout( function () { 
@@ -174,7 +169,7 @@ if (document.getElementById('sub-menu-1')) {
 }
 
 // for stoping the video from playing
-if ( document.querySelector( '#videoModal' ) ) {
+if ( document.querySelector( '#videoModal' ).length ) {
 
 	// setting onclick function for video modal
 	document.querySelector( '#videoModal .close-exit' ).onclick = function () {
@@ -343,7 +338,7 @@ function top_menu_bg() {
 
 function sub_stopper() {
 
-	if ( sub_menu1 ) {
+	if ( sub_menu1.length ) {
 
 		var section_length = sections.length;
 		section_length = section_length - 1;
@@ -352,7 +347,7 @@ function sub_stopper() {
 		var calculated1 = last_offset + sub_menu_cols1_offset - section_length;
 		var calculated2 = last_offset + sub_menu_cols2_offset - section_length;
 
-		if (sub_menu_cols1) {
+		if ( sub_menu_cols1.length ) {
 
 			if ( currentY > last_offset) {
 
@@ -367,7 +362,7 @@ function sub_stopper() {
 			}
 		}
 
-		if (sub_menu_cols2) {
+		if ( sub_menu_cols2.length ) {
 
 			if ( currentY > last_offset) {
 
@@ -570,4 +565,12 @@ function set_cta() {
 
 	// exiting function
 
+}
+
+function mobile_checker() {
+	if ( ww <= 425 ) {
+		is_mobile = true;
+	} else {
+		is_mobile = false;
+	}
 }
