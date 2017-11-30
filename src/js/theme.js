@@ -6,8 +6,8 @@ sections = document.querySelectorAll('.home #main>section'),
 sub_menu1 = document.getElementById('sub-menu-1'),
 sub_menu_cols = document.querySelectorAll( '.sub-menu-cols' ),
 menu_items = document.querySelectorAll( '#sub-menu-1 > li > a' ),
-sub_menu_cols1_offset = '';
-sub_menu_cols2_offset = '';
+sub_menu_cols1_offset = '',
+sub_menu_cols2_offset = '',
 sub_menu_cols1 = '',
 sub_menu_cols2 = '',
 sub_menu = '',
@@ -15,7 +15,6 @@ last_offset = '',
 section_id = [],
 section_offsets = [],
 current_section = sections[0],
-page_footer = '',
 currentY = '',
 scrollY = 0,
 distance = 10,
@@ -23,7 +22,7 @@ speed = 5,
 auto_scroll = '',
 is_mobile = false;
 
-if ( document.getElementById( 'sub-menu-1' ).length ) {
+if ( document.getElementById( 'sub-menu-1' ) ) {
 
 	set_mobile_sub_menu();
 	sub_menu_cols1 = sub_menu_cols[0];
@@ -34,7 +33,7 @@ if ( document.getElementById( 'sub-menu-1' ).length ) {
 
 }
 
-if ( document.getElementById( 'workbook-quantity' ).length ) {
+if ( document.getElementById( 'workbook-quantity' ) ) {
 
 	var sel = document.getElementById( 'workbook-quantity' );
 	var sel_option = sel.options[sel.selectedIndex].text;
@@ -65,7 +64,7 @@ window.onload = function () {
 	mobile_checker();
 
 	// adjustment of footer for sub-menu
-	if ( document.getElementById( 'sub-menu-1' ).length ) {
+	if ( document.getElementById( 'sub-menu-1' ) ) {
 
 		sub_menu1 = document.getElementById('sub-menu-1');
 		set_bottom_menu();
@@ -107,7 +106,7 @@ window.onresize = function () {
 		set_section_heights();
 
 		// adjustment of footer for sub-menu
-		if ( document.getElementById( 'sub-menu-1' ).length ) {
+		if ( document.getElementById( 'sub-menu-1' ) ) {
 
 			set_bottom_menu();
 
@@ -134,10 +133,10 @@ window.onscroll = function () {
 };
 
 // Check for sub-menu
-if ( document.getElementById('sub-menu-1').length ) {
+if ( document.getElementById('sub-menu-1') ) {
 
 	// onblur to colapse the accordian menu
-	if ( document.querySelector( '#mobile-menu-primary' ).length ) {
+	if ( document.querySelector( '#mobile-menu-primary' ) ) {
 
 		document.querySelector( '#mobile-menu-primary' ).onblur = function () {
 			setTimeout( function () { 
@@ -169,7 +168,7 @@ if ( document.getElementById('sub-menu-1').length ) {
 }
 
 // for stoping the video from playing
-if ( document.querySelector( '#videoModal' ).length ) {
+if ( document.querySelector( '#videoModal' ) ) {
 
 	// setting onclick function for video modal
 	document.querySelector( '#videoModal .close-exit' ).onclick = function () {
@@ -181,8 +180,6 @@ if ( document.querySelector( '#videoModal' ).length ) {
 	};
 	// exiting if statement
 }
-
-page_footer = document.getElementById('page-footer').offsetTop;
 
 // Primary-Menu Tabs Setup
 var top_menu = document.querySelectorAll('[data-target="#menuModal"]');
@@ -232,7 +229,7 @@ for (var i = 0; i < top_menu.length; i++) {
 }
 
 // for scroller coaster
-if ( document.getElementsByTagName( 'body' )[0].classList.contains( 'home' )  ) {
+if ( document.querySelector( 'body' ).classList.contains( 'home' )  ) {
 
 	window.onscroll = function () {
 
@@ -338,7 +335,7 @@ function top_menu_bg() {
 
 function sub_stopper() {
 
-	if ( sub_menu1.length ) {
+	if ( sub_menu1 ) {
 
 		var section_length = sections.length;
 		section_length = section_length - 1;
@@ -347,7 +344,7 @@ function sub_stopper() {
 		var calculated1 = last_offset + sub_menu_cols1_offset - section_length;
 		var calculated2 = last_offset + sub_menu_cols2_offset - section_length;
 
-		if ( sub_menu_cols1.length ) {
+		if ( sub_menu_cols1 ) {
 
 			if ( currentY > last_offset) {
 
@@ -362,7 +359,7 @@ function sub_stopper() {
 			}
 		}
 
-		if ( sub_menu_cols2.length ) {
+		if ( sub_menu_cols2 ) {
 
 			if ( currentY > last_offset) {
 
@@ -518,7 +515,6 @@ function set_section_heights() {
 	}
 
 	// exiting function
-	return;
 
 }
 
