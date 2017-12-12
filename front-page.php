@@ -12,6 +12,9 @@
  * @package faithtree
  */
 
+// Include and instantiate the class.
+require_once 'inc/mobile_detect.php';
+$detect = new Mobile_Detect;
 get_header(); ?>
 <main id="main" class="container-fluid">
 	<?php
@@ -81,7 +84,7 @@ get_header(); ?>
 	?>
 	<section id="above-fold" class="row"  <?php $back_img = (!get_theme_mod( 'mobile_featured_header_image' ) ) ? '': 'style="background: url(' . get_theme_mod( 'mobile_featured_header_image' ) . ');"'; echo $back_img; ?>>
 		<div class="col-xs-12 video-wrap visible-md visible-lg">
-		<video id="video" preload="none" loop muted autoplay poster="<?php echo get_theme_mod( 'background_image_section_1' );?>" class="fullscreen-bg__video">
+		<video id="video" preload="none" src="<?php echo wp_get_attachment_url( get_theme_mod( 'featured_header_media' ) ); ?>" loop muted autoplay poster="<?php echo get_theme_mod( 'mobile_featured_header_image' );?>" class="fullscreen-bg__video">
         <source src="<?php echo wp_get_attachment_url( get_theme_mod( 'featured_header_media' ) ); ?>" type="video/mp4">
     </video>
   </div> <!-- /col-xs-12 video-wrap -->

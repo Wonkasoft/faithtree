@@ -349,12 +349,12 @@ function sub_stopper() {
 			if ( currentY > last_offset) {
 
 				sub_menu_cols1.style.position = 'absolute';
-				sub_menu_cols1.style.top = calculated1 + 'px';
+				sub_menu_cols1.style.bottom = 410 + 'px';
 
 			} else if (currentY < last_offset) {
 
 				sub_menu_cols1.style.position = 'fixed';
-				sub_menu_cols1.style.top = '';
+				sub_menu_cols1.style.bottom = '25px';
 
 			}
 		}
@@ -364,12 +364,12 @@ function sub_stopper() {
 			if ( currentY > last_offset) {
 
 				sub_menu_cols2.style.position = 'absolute';
-				sub_menu_cols2.style.top = calculated2 + 'px';
+				sub_menu_cols2.style.bottom = 410 + 'px';
 
 			} else if (currentY < last_offset) {
 
 				sub_menu_cols2.style.position = 'fixed';
-				sub_menu_cols2.style.top = '';
+				sub_menu_cols2.style.bottom = '25px';
 
 			}
 		}
