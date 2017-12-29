@@ -1,6 +1,3 @@
-( function() {
-	'use strict';
-
 	var wh = window.innerHeight,
 	ww = window.innerWidth,
 	mast = document.querySelector( '#masthead' ),
@@ -217,7 +214,7 @@
 			last_offset = section_offsets[section_length];
 			section_length = section_length * 10;
 			if ( sub_menu_cols1 ) {
-				if ( currentY > last_offset) {
+				if ( currentY >= last_offset) {
 					sub_menu_cols1.style.position = 'absolute';
 					sub_menu_cols1.style.bottom = 410 + 'px';
 
@@ -227,7 +224,7 @@
 				}
 			}
 			if ( sub_menu_cols2 ) {
-				if ( currentY > last_offset) {
+				if ( currentY >= last_offset) {
 					sub_menu_cols2.style.position = 'absolute';
 					sub_menu_cols2.style.bottom = 410 + 'px';
 				} else if (currentY < last_offset) {
@@ -350,5 +347,3 @@
 		if ( ww <= 425 ) { is_mobile = true; } 
 		else { is_mobile = false; }
 	}
-
-})();
